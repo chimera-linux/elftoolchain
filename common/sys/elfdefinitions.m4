@@ -93,7 +93,9 @@ DEFINE_ELF_CLASSES()
 DEFINE_ELF_DATA_ENDIANNESSES()
 
 /*
- * Values of the magic numbers used in identification array.
+ * The magic numbers used in the initial four bytes of an ELF object.
+ *
+ * These numbers are: 0x7F, 'E', 'L' and 'F'.
  */
 DEFINE_ELF_MAGIC_VALUES()
 

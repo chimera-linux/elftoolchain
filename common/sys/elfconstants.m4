@@ -583,16 +583,15 @@ _(ELFDATA2MSB, 2,
 
 
 #
-# Values of the magic numbers used in identification array.
+# The magic numbers used in the initial four bytes of an ELF object.
 #
-changequote({,})
-define({DEFINE_ELF_MAGIC_VALUES},{
+# These numbers are: 0x7F, 'E', 'L' and 'F'.
+define(`DEFINE_ELF_MAGIC_VALUES',`
 _(ELFMAG0, 0x7FU)
-_(ELFMAG1, 'E')
-_(ELFMAG2, 'L')
-_(ELFMAG3, 'F')
-})
-changequote
+_(ELFMAG1, 0x45U)
+_(ELFMAG2, 0x4CU)
+_(ELFMAG3, 0x46U)
+')
 
 #
 # ELF OS ABI field.
