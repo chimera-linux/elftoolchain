@@ -28,7 +28,9 @@ define(`VCSID_ELFDEFINITIONS_M4',
 	`$Id$')
 include(`elfconstants.m4')dnl
 
-define(`_', `#define	$1	$2')
+define(`_',`ifelse(eval(len($1) <= 7),1,
+    `#define	$1		$2',
+    `#define	$1	$2')')
 divert(0)dnl
 
 /*
