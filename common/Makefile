@@ -11,9 +11,6 @@ INCSDIR=	/usr/include
 
 all depend:
 
-clean clobber:
-	rm -f ${CLEANFILES}
-
 cleandepend:
 	rm -f ${.OBJDIR}/.depend
 
