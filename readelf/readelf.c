@@ -458,7 +458,7 @@ elf_osabi(unsigned int abi)
 		snprintf(s_abi, sizeof(s_abi), "<unknown: %#x>", abi);
 		return (s_abi);
 	}
-};
+}
 
 static const char *
 elf_machine(unsigned int mach)
