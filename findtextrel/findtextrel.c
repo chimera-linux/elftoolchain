@@ -34,6 +34,7 @@
 #include <libelftc.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sysexits.h>
 #include <unistd.h>
 
 #include "_elftc.h"
@@ -54,10 +55,10 @@ Usage: %s [options] [files...]\n\
   -V                  Print a version identifier and exit.\n"
 
 static void
-usage(void)
+usage(int exit_code)
 {
 	(void) fprintf(stderr, USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(1);
+	exit(exit_code);
 }
 
 static void
@@ -403,13 +404,13 @@ main(int argc, char **argv)
 	while ((opt = getopt_long(argc, argv, "HV", longopts, NULL)) != -1) {
 		switch (opt) {
 		case 'H':
-			usage();
+			usage(EX_OK);
 			break;
 		case 'V':
 			version();
 			break;
 		default:
-			usage();
+			usage(EX_USAGE);
 			break;
 		}
 	}

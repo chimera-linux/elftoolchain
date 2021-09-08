@@ -40,6 +40,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sysexits.h>
 #include <unistd.h>
 
 #include "_elftc.h"
@@ -50,7 +51,7 @@ static int elftype(const char *);
 static const char *iselftype(int);
 static void printelftypes(void);
 static void printversion(void);
-static void usage(void);
+static void usage(int);
 
 struct ELFtypes {
 	const char *str;
@@ -112,11 +113,11 @@ main(int argc, char **argv)
 			if (errno == ERANGE || type < 0 || type > 255) {
 				warnx("ERROR: invalid argument to option "
 				    "-f: %s", optarg);
-				usage();
+				usage(EX_USAGE);
 			}
 			break;
 		case 'h':
-			usage();
+			usage(EX_OK);
 			break;
 		case 'l':
 			printelftypes();
@@ -131,7 +132,7 @@ main(int argc, char **argv)
 				    "incompatible with the -f option.");
 			if ((type = elftype(optarg)) == -1) {
 				warnx("ERROR: invalid ELF type '%s'", optarg);
-				usage();
+				usage(EX_USAGE);
 			}
 
 			change = 1;
@@ -140,7 +141,7 @@ main(int argc, char **argv)
 			printversion();
 			break;
 		default:
-			usage();
+			usage(EX_USAGE);
 	}
 	argc -= optind;
 	argv += optind;
@@ -149,7 +150,7 @@ main(int argc, char **argv)
 			exit(0);
 		else {
 			warnx("no file(s) specified");
-			usage();
+			usage(EX_USAGE);
 		}
 	}
 
@@ -258,17 +259,17 @@ Usage: %s [options] file...\n\
   -V | --version            Print a version identifier and exit.\n"
 
 static void
-usage(void)
+usage(int exit_code)
 {
 	(void) fprintf(stderr, USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(1);
+	exit(exit_code);
 }
 
 static void
 printversion(void)
 {
 	(void) printf("%s (%s)\n", ELFTC_GETPROGNAME(), elftc_version());
-	exit(0);
+	exit(EX_OK);
 }
 
 static const char *

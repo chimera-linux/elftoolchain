@@ -32,6 +32,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <sysexits.h>
 
 #include "_elftc.h"
 
@@ -84,11 +85,11 @@ Usage: %s [options] [encoded-names...]\n\
   --version                    Print a version identifier and exit.\n"
 
 static void
-usage(void)
+usage(int exit_code)
 {
 
 	(void) fprintf(stderr, USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(1);
+	exit(exit_code);
 }
 
 static void
@@ -156,8 +157,10 @@ main(int argc, char **argv)
 			version();
 			break;
 		case OPTION_HELP:
+			usage(EX_OK);
+			break;
 		default:
-			usage();
+			usage(EX_USAGE);
 			break;
 		}
 	}

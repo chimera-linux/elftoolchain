@@ -90,7 +90,7 @@ int	handle_elf(const char *, int);
 int	handle_binary(const char *, int);
 int	find_strings(const char *, off_t, off_t);
 void	show_version(void);
-void	usage(void);
+void	usage(int);
 
 /*
  * strings(1) extracts text(contiguous printable characters)
@@ -132,8 +132,7 @@ main(int argc, char **argv)
 				encoding = ENCODING_32BIT_LITTLE;
 				encoding_size = 4;
 			} else
-				usage();
-			        /* NOTREACHED */
+				usage(EX_USAGE);
 			break;
 		case 'f':
 			show_filename = 1;
@@ -157,7 +156,7 @@ main(int argc, char **argv)
 			else if (*optarg == 'x')
 				radix = RADIX_HEX;
 			else
-				usage();
+				usage(EX_USAGE);
 			break;
 		case 'v':
 		case 'V':
@@ -177,10 +176,12 @@ main(int argc, char **argv)
 			min_len += ch - '0';
 			break;
 		case 'h':
+			usage(EX_OK);
+			break;
 		case '?':
 		default:
-			usage();
-			/* NOTREACHED */
+			usage(EX_USAGE);
+			break;
 		}
 	}
 	argc -= optind;
@@ -431,11 +432,11 @@ Usage: %s [options] [file...]\n\
   -v     | --version           Print a version identifier and exit.\n"
 
 void
-usage(void)
+usage(int exit_code)
 {
 
 	fprintf(stderr, USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(EXIT_FAILURE);
+	exit(exit_code);
 }
 
 void

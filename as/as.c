@@ -120,7 +120,7 @@ Usage: %s [options] file...\n\
   compatibility with other assemblers, but are ignored.\n"
 
 void
-as_option_usage(int iserror, const char *format, ...)
+as_option_usage(int exit_code, const char *format, ...)
 {
 	va_list args;
 
@@ -130,10 +130,10 @@ as_option_usage(int iserror, const char *format, ...)
 		va_end(args);
 	}
 
-	(void) fprintf(iserror ? stderr : stdout,
+	(void) fprintf(exit_code != EX_OK ? stderr : stdout,
 	    AS_OPTION_USAGE_MESSAGE, ELFTC_GETPROGNAME());
 
-	exit(iserror != 0);
+	exit(exit_code);
 }
 
 static void
@@ -166,7 +166,7 @@ main(int argc, char **argv)
 			break;
 
 		case 'h':	/* Display a help message. */
-			as_option_usage(0, NULL);
+			as_option_usage(EX_OK, NULL);
 			break;
 
 		case 'f': case 's': case 'w': case 'M': case 'X':
@@ -192,11 +192,11 @@ main(int argc, char **argv)
 
 		case '?':	/* An unknown option. */
 			if (optopt)
-				as_option_usage(1,
+				as_option_usage(EX_USAGE,
 				    "ERROR: unrecognized option '-%c'.",
 				    optopt);
 			else
-				as_option_usage(1,
+				as_option_usage(EX_USAGE,
 				    "ERROR: Unrecognized option \"--%s\".",
 				    argv[optind-1]);
 			break;

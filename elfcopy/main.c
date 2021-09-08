@@ -36,6 +36,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sysexits.h>
 #include <unistd.h>
 
 #include "elfcopy.h"
@@ -221,9 +222,9 @@ static int	copy_from_tempfile(const char *src, const char *dst,
 static void	create_file(struct elfcopy *ecp, const char *src,
     const char *dst);
 static void	elfcopy_main(struct elfcopy *ecp, int argc, char **argv);
-static void	elfcopy_usage(void);
+static void	elfcopy_usage(int);
 static void	mcs_main(struct elfcopy *ecp, int argc, char **argv);
-static void	mcs_usage(void);
+static void	mcs_usage(int);
 static void	parse_sec_address_op(struct elfcopy *ecp, int optnum,
     const char *optname, char *s);
 static void	parse_sec_flags(struct sec_action *sac, char *s);
@@ -234,7 +235,7 @@ static void	set_input_target(struct elfcopy *ecp, const char *target_name);
 static void	set_osabi(struct elfcopy *ecp, const char *abi);
 static void	set_output_target(struct elfcopy *ecp, const char *target_name);
 static void	strip_main(struct elfcopy *ecp, int argc, char **argv);
-static void	strip_usage(void);
+static void	strip_usage(int);
 
 /*
  * An ELF object usually has a structure described by the
@@ -1118,7 +1119,7 @@ elfcopy_main(struct elfcopy *ecp, int argc, char **argv)
 			parse_symlist_file(ecp, optarg, SYMOP_WEAKEN);
 			break;
 		default:
-			elfcopy_usage();
+			elfcopy_usage(EX_USAGE);
 		}
 	}
 
@@ -1126,7 +1127,7 @@ elfcopy_main(struct elfcopy *ecp, int argc, char **argv)
 	argv += optind;
 
 	if (argc == 0 || argc > 2)
-		elfcopy_usage();
+		elfcopy_usage(EX_USAGE);
 
 	infile = argv[0];
 	outfile = NULL;
@@ -1170,8 +1171,11 @@ mcs_main(struct elfcopy *ecp, int argc, char **argv)
 			print_version();
 			break;
 		case 'h':
+			mcs_usage(EX_OK);
+			break;
 		default:
-			mcs_usage();
+			mcs_usage(EX_USAGE);
+			break;
 		}
 	}
 
@@ -1179,11 +1183,11 @@ mcs_main(struct elfcopy *ecp, int argc, char **argv)
 	argv += optind;
 
 	if (argc == 0)
-		mcs_usage();
+		mcs_usage(EX_USAGE);
 
 	/* Must specify one operation at least. */
 	if (!append && !compress && !delete && !print)
-		mcs_usage();
+		mcs_usage(EX_USAGE);
 
 	/*
 	 * If we are going to delete, ignore other operations. This is
@@ -1286,8 +1290,11 @@ strip_main(struct elfcopy *ecp, int argc, char **argv)
 			ecp->strip = STRIP_UNNEEDED;
 			break;
 		case 'h':
+			strip_usage(EX_OK);
+			break;
 		default:
-			strip_usage();
+			strip_usage(EX_USAGE);
+			break;
 		}
 	}
 
@@ -1300,13 +1307,13 @@ strip_main(struct elfcopy *ecp, int argc, char **argv)
 	    lookup_symop_list(ecp, NULL, SYMOP_STRIP) == NULL)
 		ecp->strip = STRIP_ALL;
 	if (argc == 0)
-		strip_usage();
+		strip_usage(EX_USAGE);
 	/*
 	 * Only accept a single input file if an output file had been
 	 * specified.
 	 */
 	if (outfile != NULL && argc != 1)
-		strip_usage();
+		strip_usage(EX_USAGE);
 
 	for (i = 0; i < argc; i++)
 		create_file(ecp, argv[i], outfile);
@@ -1597,10 +1604,10 @@ Usage: %s [options] infile [outfile]\n\
   --strip-unneeded             Do not copy relocation information.\n"
 
 static void
-elfcopy_usage(void)
+elfcopy_usage(int exit_code)
 {
 	(void) fprintf(stderr, ELFCOPY_USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(EXIT_FAILURE);
+	exit(exit_code);
 }
 
 #define	MCS_USAGE_MESSAGE	"\
@@ -1616,10 +1623,10 @@ Usage: %s [options] file...\n\
   -V | --version   Print a version identifier and exit.\n"
 
 static void
-mcs_usage(void)
+mcs_usage(int exit_code)
 {
 	(void) fprintf(stderr, MCS_USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(EXIT_FAILURE);
+	exit(exit_code);
 }
 
 #define	STRIP_USAGE_MESSAGE	"\
@@ -1645,10 +1652,10 @@ Usage: %s [options] file...\n\
   -X | --discard-locals           Remove compiler-generated local symbols.\n"
 
 static void
-strip_usage(void)
+strip_usage(int exit_code)
 {
 	(void) fprintf(stderr, STRIP_USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(EXIT_FAILURE);
+	exit(exit_code);
 }
 
 static void

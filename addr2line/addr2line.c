@@ -36,6 +36,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sysexits.h>
 
 #include "uthash.h"
 #include "_elftc.h"
@@ -101,10 +102,10 @@ Usage: %s [options] hexaddress...\n\
   -V      | --version         Print a version identifier and exit.\n"
 
 static void
-usage(void)
+usage(int exit_code)
 {
 	(void) fprintf(stderr, USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(1);
+	exit(exit_code);
 }
 
 static void
@@ -689,13 +690,13 @@ main(int argc, char **argv)
 			base = 1;
 			break;
 		case 'H':
-			usage();
+			usage(EX_OK);
 			break;
 		case 'V':
 			version();
 			break;
 		default:
-			usage();
+			usage(EX_USAGE);
 			break;
 		}
 	}

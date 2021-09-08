@@ -34,6 +34,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sysexits.h>
 #include <unistd.h>
 
 #include "_elftc.h"
@@ -104,7 +105,7 @@ static void	show_version(void);
 static void	sysv_header(const char *, Elf_Arhdr *);
 static void	sysv_footer(void);
 static void	sysv_calc(Elf *, GElf_Ehdr *, GElf_Shdr *);
-static void	usage(void);
+static void	usage(int);
 static void	tbl_new(int);
 static void	tbl_print(const char *, int);
 static void	tbl_print_num(uint64_t, enum radix_style, int);
@@ -162,7 +163,7 @@ main(int argc, char **argv)
 				else {
 					warnx("unrecognized format \"%s\".",
 					      optarg);
-					usage();
+					usage(EX_USAGE);
 				}
 				break;
 			case OPT_RADIX:
@@ -176,7 +177,7 @@ main(int argc, char **argv)
 				else {
 					warnx("unsupported radix \"%s\".",
 					      optarg);
-					usage();
+					usage(EX_USAGE);
 				}
 				break;
 			default:
@@ -185,10 +186,12 @@ main(int argc, char **argv)
 			}
 			break;
 		case 'h':
+			usage(EX_OK);
+			break;
 		case '?':
 		default:
-			usage();
-			/* NOTREACHED */
+			usage(EX_USAGE);
+			break;
 		}
 	argc -= optind;
 	argv += optind;
@@ -912,15 +915,15 @@ Usage: %s [options] file ...\n\
   -x                 Equivalent to `--radix=16'.\n"
 
 static void
-usage(void)
+usage(int exit_code)
 {
 	(void) fprintf(stderr, USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(EXIT_FAILURE);
+	exit(exit_code);
 }
 
 static void
 show_version(void)
 {
 	(void) printf("%s (%s)\n", ELFTC_GETPROGNAME(), elftc_version());
-	exit(EXIT_SUCCESS);
+	exit(EX_OK);
 }

@@ -137,12 +137,12 @@ Supported options for command 'query' are:\n\
 ";
 
 void
-isa_usage(int iserror, const char *message, ...)
+isa_usage(int exit_code, const char *message, ...)
 {
 	FILE *channel;
 	va_list ap;
 
-	channel = iserror ? stderr : stdout;
+	channel = exit_code != EX_OK ? stderr : stdout;
 
 	if (message) {
 		va_start(ap, message);
@@ -151,7 +151,7 @@ isa_usage(int iserror, const char *message, ...)
 	}
 
 	(void) fprintf(channel, isa_usage_message, ELFTC_GETPROGNAME());
-	exit(iserror != 0);
+	exit(exit_code);
 }
 
 void
@@ -200,7 +200,7 @@ main(int argc, char **argv)
 	     option_index = -1) {
 		switch (option) {
 		case 'h':
-			isa_usage(0, NULL);
+			isa_usage(EX_OK, NULL);
 			break;
 		case 'V':
 			(void) printf("%s (%s)\n", ELFTC_GETPROGNAME(),
@@ -262,7 +262,7 @@ main(int argc, char **argv)
 			config.isa_submode = ISA_SUBMODE_GENERATE_TESTS;
 			break;
 		default:
-			isa_usage(1, "\n");
+			isa_usage(EX_USAGE, "\n");
 			break;
 		}
 	}

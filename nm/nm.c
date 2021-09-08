@@ -44,6 +44,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <strings.h>
+#include <sysexits.h>
 #include <unistd.h>
 
 #include "_elftc.h"
@@ -486,7 +487,7 @@ get_opt(int argc, char **argv)
 				break;
 			default:
 				warnx("%s: Invalid format", optarg);
-				usage(1);
+				usage(EX_USAGE);
 			}
 
 			break;
@@ -512,7 +513,7 @@ get_opt(int argc, char **argv)
 			filter_insert(sym_elem_global);
 			break;
 		case 'h':
-			usage(0);
+			usage(EX_OK);
 			break;
 		case 'l':
 			nm_opts.debug_line = true;
@@ -547,7 +548,7 @@ get_opt(int argc, char **argv)
 				break;
 			default:
 				warnx("%s: Invalid radix", optarg);
-				usage(1);
+				usage(EX_USAGE);
 			}
 			break;
 		case 'u':
@@ -570,7 +571,7 @@ get_opt(int argc, char **argv)
 				nm_opts.demangle_type = -1;
 			break;
 		default :
-			usage(1);
+			usage(EX_USAGE);
 		}
 	}
 

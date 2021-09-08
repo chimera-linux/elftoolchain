@@ -41,6 +41,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sysexits.h>
 #include <unistd.h>
 
 #ifdef USE_LIBARCHIVE_AR
@@ -631,7 +632,7 @@ static const char *get_string(struct elfdump *ed, int strtab, size_t off);
 static void	get_versym(struct elfdump *ed, int i, uint16_t **vs, int *nvs);
 static void	load_sections(struct elfdump *ed);
 static void	unload_sections(struct elfdump *ed);
-static void	usage(void);
+static void	usage(int);
 #ifdef	USE_LIBARCHIVE_AR
 static int	ac_detect_ar(int fd);
 static void	ac_print_ar(struct elfdump *ed, int fd);
@@ -714,10 +715,13 @@ main(int ac, char **av)
 			if ((ed->out = fopen(optarg, "w")) == NULL)
 				err(EXIT_FAILURE, "%s", optarg);
 			break;
-		case '?':
 		case 'H':
+			usage(EX_OK);
+			break;
+		case '?':
 		default:
-			usage();
+			usage(EX_USAGE);
+			break;
 		}
 
 	ac -= optind;
@@ -736,7 +740,7 @@ main(int ac, char **av)
 		}
 	}
 	if (ac == 0)
-		usage();
+		usage(EX_USAGE);
 	if (ac > 1)
 		ed->flags |= PRINT_FILENAME;
 	if (elf_version(EV_CURRENT) == EV_NONE)
@@ -2681,8 +2685,8 @@ Usage: %s [options] file...\n\
   -w FILE                   Write output to \"FILE\".\n"
 
 static void
-usage(void)
+usage(int exit_code)
 {
 	fprintf(stderr, USAGE_MESSAGE, ELFTC_GETPROGNAME());
-	exit(EXIT_FAILURE);
+	exit(exit_code);
 }
