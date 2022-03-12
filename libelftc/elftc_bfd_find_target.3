@@ -56,7 +56,7 @@ Function
 .Fn elftc_bfd_find_target
 locates a binary object descriptor corresponding to the descriptor
 name in argument
-.Ar "target_name" .
+.Fa "target_name" .
 Binary object descriptors encapsulate properties of an object format
 such as its file representation, ELF class, and byte endianness.
 .Pp
@@ -125,17 +125,17 @@ Known descriptor names and their properties include:
 Function
 .Fn elftc_bfd_target_byteorder
 returns the ELF byte order associated with target descriptor
-.Ar target .
+.Fa target .
 .Pp
 Function
 .Fn elftc_bfd_target_class
 returns the ELF class associated with target descriptor
-.Ar target .
+.Fa target .
 .Pp
 Function
 .Fn elftc_bfd_target_flavor
 returns the object format associated with target descriptor
-.Ar target .
+.Fa target .
 The known object formats are:
 .Bl -tag -offset "XXXX" -width ".Dv ETF_BINARY" -compact
 .It Dv ETF_ELF
