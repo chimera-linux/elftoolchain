@@ -76,46 +76,46 @@ DWARF(3) API set to retrieve the information contained in these
 descriptors.
 .Pp
 Argument
-.Ar dbg
+.Fa dbg
 should reference a DWARF debug context allocated using
 .Xr dwarf_init 3 .
 .Pp
 Argument
-.Ar cie_list
+.Fa cie_list
 should point to a location that will be set to a pointer to an array
 of
 .Vt Dwarf_Cie
 descriptors.
 .Pp
 Argument
-.Ar cie_count
+.Fa cie_count
 should point to a location that will be set to the number of
 .Vt Dwarf_Cie
 descriptors returned.
 .Pp
 Argument
-.Ar fde_list
+.Fa fde_list
 should point to a location that will be set to a pointer to an array
 of
 .Vt Dwarf_Fde
 descriptors.
 .Pp
 Argument
-.Ar fde_count
+.Fa fde_count
 should point to a location that will be set to the number of
 .Vt Dwarf_Fde
 descriptors returned.
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
 .Ss Memory Management
 The memory areas used for the arrays returned in arguments
-.Ar cie_list
+.Fa cie_list
 and
-.Ar fde_list
+.Fa fde_list
 are owned by the
 .Lb libdwarf .
 Application code should not attempt to directly free these areas.
@@ -132,7 +132,7 @@ debug context.
 In case of an error, they return
 .Dv DW_DLV_ERROR
 and set the argument
-.Ar err .
+.Fa err .
 .Sh EXAMPLES
 To obtain frame information from the
 .Dq ".debug_frame"

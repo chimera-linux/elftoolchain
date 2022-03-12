@@ -169,11 +169,11 @@
 These functions return the symbolic name of a numeric DWARF constant.
 .Pp
 Argument
-.Ar val
+.Fa val
 specifies the numeric value whose symbolic name is desired.
 .Pp
 Argument
-.Ar str
+.Fa str
 should point to a location which will hold the returned
 NUL-terminated string containing the symbolic name of the
 specified value.
@@ -253,7 +253,7 @@ These functions return
 .Dv DW_DLV_OK
 on success.
 If the DWARF constant denoted by argument
-.Ar val
+.Fa val
 is not recognized, these function return
 .Dv DW_DLV_NO_ENTRY .
 .Sh SEE ALSO

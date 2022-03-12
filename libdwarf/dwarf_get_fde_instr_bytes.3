@@ -47,23 +47,23 @@ Function
 retrieves instruction bytes from a given FDE descriptor.
 .Pp
 Argument
-.Ar fde
+.Fa fde
 should reference a valid DWARF FDE descriptor.
 .Pp
 Argument
-.Ar ret_inst
+.Fa ret_inst
 should point to a location that will be set to a pointer
 to an array of bytes containing the instructions of the
 FDE descriptor.
 .Pp
 Argument
-.Ar ret_len
+.Fa ret_len
 should point to a location that will hold the length in
 bytes of the instructions returned in argument
-.Ar ret_inst .
+.Fa ret_inst .
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -82,7 +82,7 @@ when it succeeds.
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_get_fde_instr_bytes
@@ -90,10 +90,10 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 One of the arguments
-.Ar fde ,
-.Ar ret_inst
+.Fa fde ,
+.Fa ret_inst
 or
-.Ar ret_len
+.Fa ret_len
 was
 .Dv NULL .
 .El

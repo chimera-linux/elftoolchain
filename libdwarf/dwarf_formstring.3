@@ -44,19 +44,19 @@
 Function
 .Fn dwarf_formstring
 sets the location pointed to by argument
-.Ar ret
+.Fa ret
 to a pointer to a NUL-terminated string containing
 the value of the attribute referenced by argument
-.Ar attr .
+.Fa attr .
 The form of argument
-.Ar attr
+.Fa attr
 must be one of
 .Dv DW_FORM_string
 or
 .Dv DW_FORM_strp .
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to return an error descriptor in case of an error.
@@ -74,7 +74,7 @@ on success.
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_formstring
@@ -82,14 +82,14 @@ may fail with the following errors:
 .Bl -tag -width ".Bq Er DW_DLE_ATTR_FORM_BAD"
 .It Bq Er DW_DLE_ARGUMENT
 Either of arguments
-.Ar attr
+.Fa attr
 or
-.Ar ret
+.Fa ret
 was
 .Dv NULL .
 .It Bq Er DW_DLE_ATTR_FORM_BAD
 The attribute referenced by argument
-.Ar attr
+.Fa attr
 was not of a permitted kind.
 .El
 .Sh SEE ALSO

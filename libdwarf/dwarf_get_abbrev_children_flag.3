@@ -47,12 +47,12 @@ retrieves a flag indicating whether the DWARF debug information entry
 associated with a DWARF abbreviation descriptor has child entries.
 .Pp
 Argument
-.Ar abbrev
+.Fa abbrev
 should be a valid DWARF abbreviation descriptor, as returned by
 .Xr dwarf_get_abbrev 3 .
 .Pp
 Argument
-.Ar ret
+.Fa ret
 should point to a location which will hold the returned
 flag.
 The value returned will be one of the following:
@@ -66,7 +66,7 @@ specified abbreviation descriptor has no children.
 .El
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -79,7 +79,7 @@ when it succeeds.
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_get_abbrev_children_flag
@@ -87,9 +87,9 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Either of arguments
-.Ar abbrev
+.Fa abbrev
 or
-.Ar ret
+.Fa ret
 was
 .Dv NULL .
 .El

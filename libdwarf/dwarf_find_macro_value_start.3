@@ -45,7 +45,7 @@ returns a pointer to the first byte of the macro value part of the
 macro string.
 .Pp
 Argument
-.Ar macro_string
+.Fa macro_string
 should be a NUL-terminated string conforming to the macro format
 defined in the DWARF standard; see
 .Xr dwarf 4 .
@@ -56,14 +56,14 @@ returns a pointer to the first byte of the macro value.
 If the macro value part was not found, function
 .Fn dwarf_find_macro_value_start
 returns a pointer to the NUL-byte terminating argument
-.Ar macro_string .
+.Fa macro_string .
 .Pp
 Function
 .Fn dwarf_find_macro_value_start
 returns
 .Dv NULL
 if argument
-.Ar macro_string
+.Fa macro_string
 was
 .Dv NULL .
 .Sh SEE ALSO

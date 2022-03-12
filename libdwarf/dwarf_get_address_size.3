@@ -46,14 +46,14 @@ Function
 returns the size in bytes of a native address for a program object.
 .Pp
 Argument
-.Ar dbg
+.Fa dbg
 should denote a DWARF debug context created from a program object using
 .Xr dwarf_init 3 .
 Argument
-.Ar addr_size
+.Fa addr_size
 should point to a location that will hold the returned size.
 Argument
-.Ar err ,
+.Fa err ,
 if
 .No non- Ns Dv NULL ,
 it will be used to return error information.
@@ -65,7 +65,7 @@ returns
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_get_address_size
@@ -73,9 +73,9 @@ can fail with the following error:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Either of arguments
-.Ar dbg
+.Fa dbg
 or
-.Ar addr_size
+.Fa addr_size
 was
 .Dv NULL .
 .El

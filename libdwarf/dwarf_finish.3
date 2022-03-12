@@ -51,12 +51,12 @@ and
 respectively.
 .Pp
 Argument
-.Ar dbg
+.Fa dbg
 denotes a valid
 .Vt Dwarf_Debug
 instance.
 Argument
-.Ar err
+.Fa err
 will be used to record error information in case of an error.
 .Pp
 After a call to
@@ -64,7 +64,7 @@ After a call to
 or
 .Fn dwarf_object_finish ,
 the argument
-.Ar dbg
+.Fa dbg
 will be invalid and should not be used further.
 .Pp
 For
@@ -85,7 +85,7 @@ if successful.
 In case of an error, the functions return
 .Dv DW_DLV_ERROR
 and record additional information in argument
-.Ar err .
+.Fa err .
 .Sh EXAMPLES
 To deallocate a
 .Vt Dwarf_Debug

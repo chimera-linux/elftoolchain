@@ -46,12 +46,12 @@ returns the size in bytes of the stream representation of a location
 expression.
 .Pp
 Argument
-.Ar expr
+.Fa expr
 should reference a location expression descriptor allocated using
 .Xr dwarf_new_expr 3 .
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -65,7 +65,7 @@ In case of an error, function
 returns
 .Dv DW_DLV_NOCOUNT
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_expr_current_offset
@@ -73,7 +73,7 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Argument
-.Ar expr
+.Fa expr
 was
 .Dv NULL .
 .El

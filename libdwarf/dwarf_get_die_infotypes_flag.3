@@ -43,22 +43,22 @@ Function
 .Fn dwarf_get_die_infotypes_flag
 returns a flag indicating the originating DWARF section for the
 debugging information entry referenced by argument
-.Ar die .
+.Fa die .
 .Pp
 Argument
-.Ar die
+.Fa die
 should reference a valid debugging information entry descriptor.
 .Sh RETURN VALUES
 Function
 .Fn dwarf_get_die_infotypes_flag
 returns a non-zero value if argument
-.Ar die
+.Fa die
 originates in the
 .Dq .debug_info
 section.
 .Pp
 It returns zero if argument
-.Ar die
+.Fa die
 originates in the
 .Dq .debug_types
 section.

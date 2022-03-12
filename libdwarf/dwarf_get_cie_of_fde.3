@@ -46,16 +46,16 @@ Function
 retrieves the CIE descriptor associated with a given FDE descriptor.
 .Pp
 Argument
-.Ar fde
+.Fa fde
 should reference a valid FDE descriptor.
 .Pp
 Argument
-.Ar ret_cie
+.Fa ret_cie
 should point to a location that will hold the returned CIE
 descriptor.
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -68,7 +68,7 @@ when it succeeds.
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_get_cie_of_fde
@@ -76,9 +76,9 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Either of arugments
-.Ar fde
+.Fa fde
 or
-.Ar ret_cie
+.Fa ret_cie
 was
 .Dv NULL .
 .El

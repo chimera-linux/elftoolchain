@@ -50,33 +50,33 @@ extracts address range information from a
 descriptor.
 .Pp
 Argument
-.Ar ar
+.Fa ar
 should reference a valid
 .Vt Dwarf_Arange
 descriptor returned by function
 .Xr dwarf_get_aranges 3 .
 .Pp
 Argument
-.Ar start
+.Fa start
 should point to a location which will hold the start value of the
 address range associated with the descriptor.
 .Pp
 Argument
-.Ar length
+.Fa length
 should point to a location which will hold the length in bytes of the
 address range associated with the descriptor.
 .Pp
 Argument
-.Ar cu_die_offset
+.Fa cu_die_offset
 should point to a location which will be set to an offset, relative to
 the
 .Dq ".debug_info"
 section, of the first debugging information entry in the compilation
 unit associated with argument
-.Ar ar .
+.Fa ar .
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -89,7 +89,7 @@ when it succeeds.
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh EXAMPLES
 To loop through all the address lookup table entries, use:
 .Bd -literal -offset indent
@@ -121,11 +121,11 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 One of the arguments
-.Ar ar ,
-.Ar start ,
-.Ar length
+.Fa ar ,
+.Fa start ,
+.Fa length
 or
-.Ar cu_die_offset
+.Fa cu_die_offset
 was
 .Dv NULL .
 .El

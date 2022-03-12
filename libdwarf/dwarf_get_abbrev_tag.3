@@ -45,15 +45,15 @@ Function
 .Fn dwarf_get_abbrev_tag
 retrieves the tag for the abbreviation entry descriptor referenced by
 argument
-.Ar abbrev .
+.Fa abbrev .
 .Pp
 Argument
-.Ar ret
+.Fa ret
 should point to a location which will hold the returned
 abbreviation tag.
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL,
 it will be used to store error information in case of an error.
@@ -66,7 +66,7 @@ when it succeeds.
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_get_abbrev_tag
@@ -74,9 +74,9 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Either of arguments
-.Ar abbrev
+.Fa abbrev
 or
-.Ar ret
+.Fa ret
 was
 .Dv NULL .
 .El
