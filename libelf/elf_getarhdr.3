@@ -40,7 +40,7 @@ The
 .Fn elf_getarhdr
 function returns a pointer to an archive member header for
 a descriptor
-.Ar elf .
+.Fa elf .
 This descriptor must have been returned by a prior call to
 .Xr elf_begin 3 ,
 and must be a descriptor for a member inside an
@@ -83,12 +83,12 @@ may fail with the following errors:
 .Bl -tag -width "[ELF_E_RESOURCE]"
 .It Bq Er ELF_E_ARGUMENT
 Argument
-.Ar elf
+.Fa elf
 was
 .Dv NULL .
 .It Bq Er ELF_E_ARGUMENT
 Argument
-.Ar elf
+.Fa elf
 was not a descriptor for a member of an
 .Xr ar 1
 archive.

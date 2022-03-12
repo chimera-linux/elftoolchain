@@ -40,7 +40,7 @@ Function
 .Fn elf_getbase
 returns the file offset to the first byte of the object referenced by ELF
 descriptor
-.Ar elf .
+.Fa elf .
 .Pp
 For descriptors referencing members of archives, the returned offset is
 the file offset of the member in its containing archive.
@@ -60,7 +60,7 @@ may fail with the following errors:
 .Bl -tag -width "[ELF_E_RESOURCE]"
 .It Bq Er ELF_E_ARGUMENT
 Argument
-.Ar elf
+.Fa elf
 was
 .Dv NULL .
 .El
