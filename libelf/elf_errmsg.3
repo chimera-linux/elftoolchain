@@ -56,9 +56,9 @@ The function
 .Fn elf_errmsg
 returns a null-terminated string with a human readable
 description of the error specified in argument
-.Ar error .
+.Fa error .
 A zero value for argument
-.Ar error
+.Fa error
 retrieves the most recent error encountered by the ELF
 library.
 An argument value of -1 behaves identically, except that
@@ -76,7 +76,7 @@ Function
 .Fn elf_errmsg
 returns a pointer to library local storage for non-zero values
 of argument
-.Ar error .
+.Fa error .
 With a zero argument, the function will return a
 .Dv NULL
 pointer if no
