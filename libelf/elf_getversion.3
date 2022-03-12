@@ -50,7 +50,7 @@ The function
 .Fn elf_getversion
 returns the operating version for the ELF descriptor pointed to by
 argument
-.Ar elf .
+.Fa elf .
 .Pp
 This descriptor must have been allocated by a previous call to one of
 the functions that return an ELF descriptor, such as
@@ -60,7 +60,7 @@ the functions that return an ELF descriptor, such as
 and
 .Xr elf_openmemory 3 .
 The object associated with the descriptor
-.Ar elf
+.Fa elf
 should be an ELF object.
 .Sh RETURN VALUES
 The function returns the operating version for the ELF object if
@@ -76,12 +76,12 @@ This function can fail with the following errors:
 .Bl -tag -width "[ELF_E_ARGUMENT]"
 .It Bq Er ELF_E_ARGUMENT
 The argument
-.Ar elf
+.Fa elf
 was
 .Dv NULL .
 .It Bq Er ELF_E_ARGUMENT
 The underlying object referenced by the descriptor
-.Ar elf
+.Fa elf
 was not an ELF object.
 .El
 .Sh SEE ALSO

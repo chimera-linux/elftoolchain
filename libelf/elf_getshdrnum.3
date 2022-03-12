@@ -39,9 +39,9 @@
 Function
 .Fn elf_getshdrnum
 retrieves the number of ELF sections associated with descriptor
-.Ar elf
+.Fa elf
 and stores it into the location pointed to by argument
-.Ar shnum .
+.Fa shnum .
 .Pp
 This routine allows applications to uniformly process both normal ELF
 objects, and ELF objects that use extended section numbering.
@@ -58,14 +58,14 @@ can fail with the following errors:
 A
 .Dv NULL
 value was passed in for argument
-.Ar elf .
+.Fa elf .
 .It Bq Er ELF_E_ARGUMENT
 Argument
-.Ar elf
+.Fa elf
 was not for an ELF file.
 .It Bq Er ELF_E_ARGUMENT
 Argument
-.Ar elf
+.Fa elf
 lacks an ELF Executable header.
 .El
 .Sh SEE ALSO
