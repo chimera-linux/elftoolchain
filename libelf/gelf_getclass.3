@@ -39,7 +39,7 @@
 Function
 .Fn gelf_getclass
 returns the ELF class of the descriptor supplied in argument
-.Ar elf .
+.Fa elf .
 .Sh RETURN VALUES
 Function
 .Fn gelf_getclass
@@ -48,12 +48,12 @@ will return one of
 or
 .Dv ELFCLASS64
 if the argument
-.Ar elf
+.Fa elf
 is a descriptor for an ELF file.
 The value
 .Dv ELFCLASSNONE
 is returned if argument
-.Ar elf
+.Fa elf
 was null, or if it was not a descriptor for an ELF file.
 .Sh SEE ALSO
 .Xr elf 3 ,
