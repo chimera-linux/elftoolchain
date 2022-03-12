@@ -39,9 +39,9 @@
 The
 .Fn elf_kind
 function identifies the kind of file associated with its argument
-.Ar elf .
+.Fa elf .
 The argument
-.Ar elf
+.Fa elf
 is allowed to be
 .Dv NULL .
 .Sh RETURN VALUES
@@ -51,20 +51,20 @@ function returns one of the following values:
 .Bl -tag -width indent
 .It Dv ELF_K_AR
 The file associated with argument
-.Ar elf
+.Fa elf
 is an archive.
 .It Dv ELF_K_ELF
 The file associated with argument
-.Ar elf
+.Fa elf
 is an ELF file.
 .It Dv ELF_K_NONE
 The argument
-.Ar elf
+.Fa elf
 was
 .Dv NULL ,
 or the ELF library could not determine the type of the file
 associated with argument
-.Ar elf ,
+.Fa elf ,
 or an error occurred when processing.
 .El
 .Sh SEE ALSO

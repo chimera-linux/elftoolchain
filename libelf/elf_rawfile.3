@@ -39,10 +39,10 @@
 Function
 .Fn elf_rawfile
 returns the uninterpreted contents of the file referenced by ELF descriptor
-.Ar elf .
+.Fa elf .
 .Pp
 If argument
-.Ar sz
+.Fa sz
 is non-null, the function stores the file's size in bytes
 in the location to which it points.
 A value of zero is written to this location if an error is
@@ -60,12 +60,12 @@ may fail with the following errors:
 .Bl -tag -width "[ELF_E_RESOURCE]"
 .It Bq Er ELF_E_ARGUMENT
 Argument
-.Ar elf
+.Fa elf
 was
 .Dv NULL .
 .It Bq Er ELF_E_SEQUENCE
 Argument
-.Ar elf
+.Fa elf
 was opened for writing and function
 .Fn elf_rawfile
 was invoked before
