@@ -47,22 +47,22 @@ creates a
 .Dv DW_AT_producer
 attribute descriptor and attaches it to the debugging information
 entry referenced by argument
-.Ar die .
+.Fa die .
 The created attribute will have DWARF form
 .Dv DW_FORM_strp .
 .Pp
 Argument
-.Ar die
+.Fa die
 should reference a debugging information entry allocated using
 .Xr dwarf_new_die 3 .
 .Pp
 Argument
-.Ar producer
+.Fa producer
 should point to a NUL-terminated string which will become the value of
 the created attribute.
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -75,7 +75,7 @@ In case of an error, function
 returns
 .Dv DW_DLV_BADADDR
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_add_AT_producer
@@ -83,9 +83,9 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Either of the arguments
-.Ar die
+.Fa die
 or
-.Ar producer
+.Fa producer
 was
 .Dv NULL .
 .It Bq Er DW_DLE_MEMORY

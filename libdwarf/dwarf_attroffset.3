@@ -45,14 +45,14 @@ Function
 .Fn dwarf_attroffset
 retrieves the section-relative offset of the attribute descriptor
 referenced by argument
-.Ar at .
+.Fa at .
 .Pp
 Argument
-.Ar ret_off
+.Fa ret_off
 should point to a location that is to hold the returned
 section-relative offset.
 If argument
-.Ar err
+.Fa err
 is
 .No non- Ns Dv NULL ,
 it is used to return an error descriptor in case of an error.
@@ -65,7 +65,7 @@ returns
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets argument
-.Ar err .
+.Fa err .
 .Sh COMPATIBILITY
 This function is an extension to the
 .Xr DWARF 3
@@ -77,9 +77,9 @@ function may fail with the following errors:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Either of the arguments
-.Ar at
+.Fa at
 or
-.Ar ret_off
+.Fa ret_off
 was
 .Dv NULL .
 .El

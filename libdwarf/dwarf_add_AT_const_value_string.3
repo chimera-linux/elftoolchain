@@ -59,10 +59,10 @@ These functions create a
 .Dv DW_AT_const_value
 attribute descriptor and attach it to the debugging information entry
 referenced by argument
-.Ar die .
+.Fa die .
 .Pp
 Argument
-.Ar die
+.Fa die
 should reference a debugging information entry allocated using
 .Xr dwarf_new_die 3 .
 .Pp
@@ -71,7 +71,7 @@ Function
 creates a
 .Dv DW_AT_const_value
 attribute descriptor containing the signed value specified by argument
-.Ar value .
+.Fa value .
 The created attribute descriptor will have DWARF form
 .Dv DW_FORM_sdata .
 .Pp
@@ -81,7 +81,7 @@ creates a
 .Dv DW_AT_const_value
 attribute descriptor containing the unsigned value specified by
 argument
-.Ar value .
+.Fa value .
 The created attribute descriptor will have DWARF form
 .Dv DW_FORM_udata .
 .Pp
@@ -91,12 +91,12 @@ creates a
 .Dv DW_AT_const_value
 attribute descriptor containing the string pointed to by the
 NUL-terminated argument
-.Ar str .
+.Fa str .
 The created attribute descriptor will have DWARF form
 .Dv DW_FORM_strp .
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used by these functions to store error
@@ -106,15 +106,15 @@ On success, these functions return the created attribute descriptor.
 In case of an error, these functions return
 .Dv DW_DLV_BADADDR
 and set the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 These functions can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Either of the arguments
-.Ar die
+.Fa die
 or
-.Ar str
+.Fa str
 was
 .Dv NULL .
 .It Bq Er DW_DLE_MEMORY

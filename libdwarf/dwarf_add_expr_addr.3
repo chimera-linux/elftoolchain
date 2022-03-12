@@ -56,25 +56,25 @@ adds a
 .Dv DW_OP_addr
 location expression to the location expression descriptor referenced
 by argument
-.Ar expr .
+.Fa expr .
 .Pp
 Argument
-.Ar expr
+.Fa expr
 should reference a location expression descriptor allocated using
 the function
 .Xr dwarf_new_expr 3 .
 .Pp
 Argument
-.Ar address
+.Fa address
 specifies the operand, a relocatable address value.
 .Pp
 Argument
-.Ar sym_index
+.Fa sym_index
 specifies the ELF symbol index of the symbol to be used for
 relocation.
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -91,13 +91,13 @@ expression byte stream generated.
 In case of an error, these functions return
 .Dv DW_DLV_NOCOUNT
 and set the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 These functions can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Argument
-.Ar expr
+.Fa expr
 was
 .Dv NULL .
 .It Bq Er DW_DLE_MEMORY
