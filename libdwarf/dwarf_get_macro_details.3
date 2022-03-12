@@ -56,30 +56,30 @@ with each
 descriptor describing one macro information entry.
 .Pp
 Argument
-.Ar dbg
+.Fa dbg
 should reference a DWARF debug context allocated using
 .Xr dwarf_init 3 .
 Argument
-.Ar offset
+.Fa offset
 is an offset, relative to the
 .Dq ".debug_macinfo"
 section, to the start of the desired macro information.
 Argument
-.Ar max_count
+.Fa max_count
 specifies the maximum number of macro information entries
 to be returned, or 0 if all entries are to be returned.
 Argument
-.Ar entry_cnt
+.Fa entry_cnt
 should point to a location that will be set to the number
 of entries actually returned.
 Argument
-.Ar details
+.Fa details
 should point to a location that will be set to a pointer to
 an array of
 .Vt Dwarf_Macro_Details
 descriptors.
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -130,7 +130,7 @@ for other values of
 The memory area used for the array of
 .Vt Dwarf_Macro_Details
 descriptors returned in argument
-.Ar details
+.Fa details
 is owned by the
 .Lb libdwarf .
 The application should not attempt to directly free this pointer.
@@ -148,11 +148,11 @@ when it succeeds.
 It returns
 .Dv DW_DLV_NO_ENTRY
 if there is no more macro information at the specified offset
-.Ar offset .
+.Fa offset .
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh EXAMPLES
 To loop through all the macro information entries associated with
 a DWARF debug context:
@@ -179,15 +179,15 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_NO_ENTRY"
 .It Bq Er DW_DLE_ARGUMENT
 One of the arguments
-.Ar dbg ,
-.Ar entry_cnt
+.Fa dbg ,
+.Fa entry_cnt
 or
-.Ar details
+.Fa details
 was
 .Dv NULL .
 .It Bq Er DW_DLE_NO_ENTRY
 There is no more macro information at the specified offset
-.Ar offset .
+.Fa offset .
 .El
 .Sh SEE ALSO
 .Xr dwarf 3 ,

@@ -45,11 +45,11 @@
 Function
 .Fn dwarf_hasattr
 tests whether the debugging information entry referenced in argument
-.Ar die
+.Fa die
 contains the attribute named by argument
-.Ar attr .
+.Fa attr .
 Legal values for argument
-.Ar attr
+.Fa attr
 are those denoted by the
 .Dv DW_AT_*
 constants in the DWARF specification.
@@ -58,11 +58,11 @@ If the named attribute is present in the debugging information entry,
 function
 .Fn dwarf_hasattr
 returns a non-zero value in the location pointed to by argument
-.Ar ret_bool .
+.Fa ret_bool .
 If the named attribute is not present, a zero is written instead.
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to return an error descriptor in case of an error.
@@ -74,7 +74,7 @@ returns
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_hasattr

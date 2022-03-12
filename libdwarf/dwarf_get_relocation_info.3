@@ -58,7 +58,7 @@ by this function may be obtained by calling function
 .Xr dwarf_get_relocation_info_count 3 .
 .Pp
 Argument
-.Ar dbg
+.Fa dbg
 should reference a DWARF producer instance allocated using
 .Xr dwarf_producer_init 3 in sequence.
 or
@@ -68,28 +68,28 @@ The
 flag should have been set on the DWARF producer instance.
 .Pp
 Argument
-.Ar elf_section_index
+.Fa elf_section_index
 should point to a location which will be set to the ELF section index
 of the relocation section to which the retrieved relocation array
 belongs.
 .Pp
 Argument
-.Ar elf_section_link
+.Fa elf_section_link
 should point to a location which will be set to the section index of
 the ELF section to which the retrieved relocation array applies.
 .Pp
 Argument
-.Ar reloc_entry_count
+.Fa reloc_entry_count
 should point to a location which will be set to the total number of
 relocation entries contained in the relocation array.
 .Pp
 Argument
-.Ar reloc_buf
+.Fa reloc_buf
 should point to a location which will be set to a pointer to the
 retrieved array of relocation entries.
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -147,7 +147,7 @@ In case of an error, function
 returns
 .Dv DW_DLV_ERROR
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh EXAMPLES
 To generate relocation entries and retrieve them, use:
 .Bd -literal -offset indent
@@ -200,12 +200,12 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_NO_ENTRY"
 .It Bq Er DW_DLE_ARGUMENT
 One of the arguments
-.Ar dbg ,
-.Ar elf_section_index ,
-.Ar elf_section_link ,
-.Ar reloc_entry_count
+.Fa dbg ,
+.Fa elf_section_index ,
+.Fa elf_section_link ,
+.Fa reloc_entry_count
 or
-.Ar reloc_buf
+.Fa reloc_buf
 was
 .Dv NULL .
 .It Bq Er DW_DLE_NO_ENTRY

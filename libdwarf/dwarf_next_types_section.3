@@ -47,11 +47,11 @@ steps through the
 sections found in a debug context.
 .Pp
 Argument
-.Ar dbg
+.Fa dbg
 should reference a DWARF debug context allocated using
 .Xr dwarf_init 3 .
 Argument
-.Ar err
+.Fa err
 should point to a location that will hold an error descriptor in case
 of an error.
 .Pp
@@ -90,7 +90,7 @@ returns
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets argument
-.Ar err .
+.Fa err .
 When there are no more
 .Dq \&.debug_types
 sections left to traverse, it returns

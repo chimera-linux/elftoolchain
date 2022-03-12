@@ -49,10 +49,10 @@ Function
 may be used to set the callback argument passed to a configured
 error handler at the time it is invoked.
 Argument
-.Ar arg
+.Fa arg
 is the callback argument being set.
 Argument
-.Ar dbg
+.Fa dbg
 can be a debug context allocated by a prior call to
 .Xr dwarf_init 3 ,
 or can be
@@ -63,11 +63,11 @@ is to be set.
 Function
 .Fn dwarf_seterrhand
 may be used to associate an error handler denoted by argument
-.Ar handler
+.Fa handler
 with the DWARF debug context descriptor denoted by argument
-.Ar dbg .
+.Fa dbg .
 Argument
-.Ar dbg
+.Fa dbg
 should be a debug context allocated by a prior call to
 .Xr dwarf_init 3 ,
 or may be
@@ -78,9 +78,9 @@ is to be set.
 Function
 .Fn dwarf_seterrhand
 returns the previous error handler associated with argument
-.Ar dbg .
+.Fa dbg .
 If argument
-.Ar dbg
+.Fa dbg
 is
 .Dv NULL ,
 function
@@ -90,9 +90,9 @@ returns the previous library-wide error handler.
 Function
 .Fn dwarf_seterrarg
 returns the previous callback argument associated with argument
-.Ar dbg .
+.Fa dbg .
 If argument
-.Ar dbg
+.Fa dbg
 is
 .Dv NULL ,
 function
@@ -100,7 +100,7 @@ function
 returns the previous library-wide callback argument.
 .Sh COMPATIBILITY
 The behavior of these functions when argument
-.Ar dbg
+.Fa dbg
 is
 .Dv NULL
 is a local extension.

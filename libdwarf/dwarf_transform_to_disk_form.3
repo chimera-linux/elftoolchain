@@ -50,14 +50,14 @@ is set on the producer, the function will also generate the associated
 relocation arrays.
 .Pp
 Argument
-.Ar dbg
+.Fa dbg
 should reference a DWARF producer instance allocated using
 .Xr dwarf_producer_init 3
 or
 .Xr dwarf_producer_init_b 3 .
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -79,7 +79,7 @@ In case of an error, function
 returns
 .Dv DW_DLV_NOCOUNT
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_transform_to_disk_form
@@ -87,7 +87,7 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Argument
-.Ar dbg
+.Fa dbg
 was
 .Dv NULL .
 .It Bq Er DW_DLE_MEMORY

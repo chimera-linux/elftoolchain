@@ -49,22 +49,22 @@ sets the base address used by subsequent invocations of the
 function.
 .Pp
 Argument
-.Ar dbg
+.Fa dbg
 should reference a DWARF producer instance allocated using
 .Xr dwarf_producer_init 3
 or
 .Xr dwarf_producer_init_b 3 .
 .Pp
 Argument
-.Ar off
+.Fa off
 specifies a relocatable program address.
 .Pp
 Argument
-.Ar symndx
+.Fa symndx
 specifies the index of the ELF symbol to be used for relocation.
 .Pp
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to store error information in case of an error.
@@ -78,7 +78,7 @@ In case of an error, function
 returns
 .Dv DW_DLV_NOCOUNT
 and sets the argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_lne_set_address
@@ -86,12 +86,12 @@ can fail with:
 .Bl -tag -width ".Bq Er DW_DLE_ARGUMENT"
 .It Bq Er DW_DLE_ARGUMENT
 Argument
-.Ar dbg
+.Fa dbg
 was
 .Dv NULL .
 .It Bq Er DW_DLE_ARGUMENT
 The argument
-.Ar symndx
+.Fa symndx
 had an illegal value.
 .It Bq Er DW_DLE_MEMORY
 An out of memory condition was encountered during the execution of the

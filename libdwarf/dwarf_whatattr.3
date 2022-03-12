@@ -45,11 +45,11 @@ Function
 .Fn dwarf_whatattr
 retrieves the attribute code for the DWARF attribute referenced
 by argument
-.Ar attr ,
+.Fa attr ,
 and writes it to the location pointed to by argument
-.Ar retcode .
+.Fa retcode .
 If argument
-.Ar err
+.Fa err
 is not
 .Dv NULL ,
 it will be used to return an error descriptor in case of an error.
@@ -61,7 +61,7 @@ returns
 In case of an error, it returns
 .Dv DW_DLV_ERROR
 and sets argument
-.Ar err .
+.Fa err .
 .Sh ERRORS
 Function
 .Fn dwarf_whatattr
