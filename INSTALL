@@ -19,7 +19,7 @@ operating systems.
   NetBSD_             9.1        amd64
   OpenBSD_            6.5        amd64
   Raspbian_           10         armv7l
-  Ubuntu_ GNU/Linux   18.04      x86_64
+  Ubuntu_ GNU/Linux   20.04      x86_64
   =================   ========   =======================
 
 .. _DragonFly BSD: http://www.dragonflybsd.org/
@@ -133,9 +133,9 @@ Prerequisites
     - Building additional documentation is not currently supported
       under NetBSD.
 
-:Ubuntu GNU/Linux 18.04:
+:Ubuntu GNU/Linux 20.04:
     - The following packages are pre-requisites for building the
-      sources on Ubuntu GNU/Linux 18.04:
+      sources on Ubuntu GNU/Linux 20.04:
 
       ===================     =====================================
       **Package**             **Description**
@@ -170,7 +170,7 @@ Prerequisites
       #. The following additional packages need to be installed, as
          listed in the example command line below::
 
-            % sudo apt install libexpat1-dev python3.7 python3-yaml \
+            % sudo apt install libexpat1-dev python3.8 python3-yaml \
               sharutils
 
     - To build additional documentation, the packages listed in the
