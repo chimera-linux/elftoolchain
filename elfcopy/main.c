@@ -1537,6 +1537,10 @@ Usage: %s [options] infile [outfile]\n\
   -p | --preserve-dates        Preserve access and modification times.\n\
   -w | --wildcard              Use shell-style patterns to name symbols.\n\
   -x | --discard-all           Do not copy non-globals to the output.\n\
+  -G SYMFILE | --keep-global-symbols=SYMFILE\n\
+                               Keep the symbols specified in SYMFILE as\n\
+			       global, making other symbols local to the\n\
+			       file.\n\
   -I FORMAT | --input-target=FORMAT\n\
                                Specify object format for the input file.\n\
   -K SYM | --keep-symbol=SYM   Copy symbol SYM to the output.\n\
@@ -1577,6 +1581,9 @@ Usage: %s [options] infile [outfile]\n\
                                section by VAL.\n\
   --gap-fill=VAL               Fill the gaps between sections with bytes\n\
                                of value VAL.\n\
+  --keep-global-symbol=SYM     Keep the symbol SYM as global, and make any\n\
+                               other symbols not otherwise specified as\n\
+			       global to be local to the file.\n\
   --localize-hidden            Make all hidden symbols local to the output\n\
                                file.\n\
   --no-adjust-warning| --no-change-warnings\n\
