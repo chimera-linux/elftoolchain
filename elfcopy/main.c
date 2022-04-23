@@ -1026,6 +1026,7 @@ elfcopy_main(struct elfcopy *ecp, int argc, char **argv)
 			parse_symlist_file(ecp, optarg, SYMOP_KEEP);
 			break;
 		case ECP_KEEP_GLOBAL_SYMBOLS:
+			ecp->flags |= KEEP_GLOBAL;
 			parse_symlist_file(ecp, optarg, SYMOP_KEEPG);
 			break;
 		case ECP_LOCALIZE_HIDDEN:
