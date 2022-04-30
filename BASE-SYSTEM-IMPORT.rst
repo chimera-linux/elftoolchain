@@ -25,6 +25,12 @@ List of placeholders
      #define __RCSID(ID) /**/
      #endif
 
+@ELFTC-DEFINE-ELFTC-VCSID@
+
+  This place holder is meant to be replaced by a project-specific
+  definition of the ``ELFTC_VCSID()`` macro if the default definition
+  needs to be overridden.
+
 @ELFTC-USE-DOWNSTREAM-VCSID@
 
   A place holder to be replaced by the use of the downstream project's
