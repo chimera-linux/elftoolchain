@@ -24,7 +24,7 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+/*@ELFTC-INCLUDE-SYS-CDEFS@*/
 
 #include <libelf.h>
 

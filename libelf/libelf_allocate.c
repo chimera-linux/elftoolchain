@@ -28,7 +28,7 @@
  * Internal APIs
  */
 
-#include <sys/cdefs.h>
+/*@ELFTC-INCLUDE-SYS-CDEFS@*/
 
 #include <assert.h>
 #include <errno.h>

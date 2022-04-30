@@ -24,7 +24,7 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+/*@ELFTC-INCLUDE-SYS-CDEFS@*/
 
 #include <ar.h>
 #include <assert.h>
