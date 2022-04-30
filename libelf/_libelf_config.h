@@ -43,10 +43,11 @@
 #endif
 
 /*
- * Downstream projects can replace the following marker with a custom
- * definition of LIBELF_BYTEORDER.
+ * Downstream projects can replace the following placeholder with a custom
+ * definition of LIBELF_BYTEORDER, if the host's native byte order cannot
+ * be determined using the compilation environment.
  */
-/* @LIBELF-BYTEORDER-MARKER@ */
+/* @LIBELF-DEFINE-HOST-BYTEORDER@ */
 
 #if	!defined(LIBELF_BYTEORDER)
 

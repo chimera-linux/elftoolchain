@@ -283,11 +283,11 @@ struct name {							\
 /*
  * VCS Ids.
  *
- * The marker below is intended to be replaced with a project-specific
+ * The place holder below is intended to be replaced with a project-specific
  * definition of the ELFTC_VCSID macro.
  */
 
-/* @ELFTC-VCSID-MARKER@ */
+/* @ELFTC-DEFINE-ELFTC-VCSID@ */
 
 #ifndef	ELFTC_VCSID
 
@@ -311,6 +311,18 @@ struct name {							\
 #endif
 
 #endif	/* ELFTC_VCSID */
+
+/*
+ * The place holder below is meant to be replaced by a declaration
+ * of the downstream project's revision control macro.
+ *
+ * E.g. on NetBSD, this place holder would be replaced by:
+ *
+ *   #if !defined(__RCSID)
+ *   #define __RCSID(ID)
+ *   #endif
+ */
+/*@ELFTC-DECLARE-DOWNSTREAM-VCSID@*/
 
 /*
  * Provide an equivalent for getprogname(3).
