@@ -32,7 +32,7 @@
 
 ELFTC_VCSID("$Id$");
 
-/*@ELFTC-DOWNSTREAM-VCSID@*/
+/*@ELFTC-USE-DOWNSTREAM-VCSID@*/
 
 int
 gelf_getclass(Elf *e)

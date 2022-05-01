@@ -33,7 +33,7 @@
 
 ELFTC_VCSID("$Id$");
 
-/*@ELFTC-DOWNSTREAM-VCSID@*/
+/*@ELFTC-USE-DOWNSTREAM-VCSID@*/
 
 long
 elf32_checksum(Elf *e)

@@ -33,7 +33,7 @@
 
 ELFTC_VCSID("$Id$");
 
-/*@ELFTC-DOWNSTREAM-VCSID@*/
+/*@ELFTC-USE-DOWNSTREAM-VCSID@*/
 
 size_t
 elf32_fsize(Elf_Type t, size_t c, unsigned int v)

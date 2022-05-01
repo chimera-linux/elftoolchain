@@ -33,7 +33,7 @@
 
 ELFTC_VCSID("$Id$");
 
-/*@ELFTC-DOWNSTREAM-VCSID@*/
+/*@ELFTC-USE-DOWNSTREAM-VCSID@*/
 
 /*
  * Translate to/from the file representation of ELF objects.

@@ -36,7 +36,7 @@
 
 ELFTC_VCSID("$Id$");
 
-/*@ELFTC-DOWNSTREAM-VCSID@*/
+/*@ELFTC-USE-DOWNSTREAM-VCSID@*/
 
 /*
  * Convert a string bounded by `start' and `start+sz' (exclusive) to a

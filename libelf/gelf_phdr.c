@@ -35,7 +35,7 @@
 
 ELFTC_VCSID("$Id$");
 
-/*@ELFTC-DOWNSTREAM-VCSID@*/
+/*@ELFTC-USE-DOWNSTREAM-VCSID@*/
 
 Elf32_Phdr *
 elf32_getphdr(Elf *e)

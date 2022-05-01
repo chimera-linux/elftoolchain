@@ -35,7 +35,7 @@
 
 ELFTC_VCSID("$Id$");
 
-/*@ELFTC-DOWNSTREAM-VCSID@*/
+/*@ELFTC-USE-DOWNSTREAM-VCSID@*/
 
 GElf_Dyn *
 gelf_getdyn(Elf_Data *ed, int ndx, GElf_Dyn *dst)

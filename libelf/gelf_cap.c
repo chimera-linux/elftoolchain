@@ -35,7 +35,7 @@
 
 ELFTC_VCSID("$Id$");
 
-/*@ELFTC-DOWNSTREAM-VCSID@*/
+/*@ELFTC-USE-DOWNSTREAM-VCSID@*/
 
 GElf_Cap *
 gelf_getcap(Elf_Data *ed, int ndx, GElf_Cap *dst)

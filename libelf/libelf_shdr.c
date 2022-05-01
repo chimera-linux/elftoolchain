@@ -33,7 +33,7 @@
 
 ELFTC_VCSID("$Id$");
 
-/*@ELFTC-DOWNSTREAM-VCSID@*/
+/*@ELFTC-USE-DOWNSTREAM-VCSID@*/
 
 void *
 _libelf_getshdr(Elf_Scn *s, int ec)
