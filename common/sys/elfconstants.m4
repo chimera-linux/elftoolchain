@@ -593,6 +593,12 @@ _(ELFMAG2, 0x4CU)
 _(ELFMAG3, 0x46U)
 ')
 
+# Additional ELFMAG related constants.
+define(`DEFINE_ELF_MAGIC_ADDITIONAL_CONSTANTS',`
+_(ELFMAG,  "\177ELF")
+_(SELFMAG, 4)
+')
+
 #
 # ELF OS ABI field.
 #
@@ -1497,6 +1503,12 @@ _(STT_SPARC_REGISTER,  13,
 	`SPARC register information')
 _(STT_HIPROC,          15,
 	`end of processor-specific types')
+')
+
+# Additional symbol type related constants.
+define(`DEFINE_SYMBOL_TYPES_ADDITIONAL_CONSTANTS',`
+_(STT_NUM,             7,
+	`the number of symbol types')
 ')
 
 #

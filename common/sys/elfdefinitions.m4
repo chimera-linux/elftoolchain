@@ -100,6 +100,8 @@ DEFINE_ELF_DATA_ENDIANNESSES()
  * These numbers are: 0x7F, 'E', 'L' and 'F'.
  */
 DEFINE_ELF_MAGIC_VALUES()
+/* Additional magic-related constants. */
+DEFINE_ELF_MAGIC_ADDITIONAL_CONSTANTS()
 
 /*
  * ELF OS ABI field.
@@ -174,6 +176,8 @@ DEFINE_SYMBOL_BINDINGS()
  * Symbol types
  */
 DEFINE_SYMBOL_TYPES()
+/* Additional constants related to symbol types. */
+DEFINE_SYMBOL_TYPES_ADDITIONAL_CONSTANTS()
 
 /*
  * Symbol binding.
