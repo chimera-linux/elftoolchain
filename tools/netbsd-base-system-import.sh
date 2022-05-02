@@ -32,6 +32,7 @@ err() {
 }
 
 ## Parse options.
+diff_only=NO
 options=":d:hs:m:vD"
 while getopts "$options" var; do
   case $var in
@@ -86,7 +87,7 @@ c \
 #endif  /* !defined(__RCSID) */
 }' -e \
 '/@ELFTC-DEFINE-ELFTC-VCSID@/ {
-a \
+c \
 #ifndef	ELFTC_VCSID\
 #define	ELFTC_VCSID(ID)		/**/\
 #endif
@@ -112,7 +113,7 @@ compare_and_move_or_diff() {
     return 0
   fi
 
-  if [ -n "${diff_only}" ]; then
+  if [ "${diff_only}" = YES ]; then
     # Show the changes needed to update the destination.
     if [ -f ${dstfile} ]; then
       diff -u ${dstfile} ${2}
@@ -122,6 +123,7 @@ compare_and_move_or_diff() {
     fi
   else
     mv ${2} ${dstfile} || exit ${?}
+    changed_file="${1}"
   fi
 }
 
@@ -138,7 +140,6 @@ handle_manual_page() {
 # VCS IDs transformed.
 handle_m4_file() {
   echo 'dnl 	$NetBSD$'  > ${srctmp}
-  echo                    >> ${srctmp}
   transform_placeholders   <  ${srcdir}/${1} | \
     rename_svn_id         >> ${srctmp}
 
@@ -181,20 +182,24 @@ trap "rm ${srctmp} ${srcmptmp} ${dstcmptmp};" 0 1 2 3 15
 #    - Display diffs or move changed files to the destination directory.
 
 for m in ${modules}; do
-  [ -n "$verbose" ] && echo Importing module "'$m'".
+  [ -n "$verbose" ] && echo Examining module "'$m'".
 
   # Create any new directories under the destination root.
   (cd "${srcdir}" && find "${m}" -depth -type d) | \
     while read dir; do
-      [ -n "${verbose}" ] && echo Creating "'$dir'".
+      [ -n "${verbose}" ] && echo "Creating '$dir'."
       mkdir -p "${dstdir}/${dir}"
     done
 
   # Import files, transforming them along the way.
   (cd "${srcdir}" && find "${m}" -depth -type f $pattern) | \
-    egrep -v '.o$|.a$|.po$|.so$' | \
+    egrep -v '.o$|.a$|.po$|.so$|.swp$|*~$' | \
     while read file; do
-      [ -n "${verbose}" ] && echo Importing file "'$file'".
+      changed_file=''  # Set by 'compare_and_move_or_diff'.
+
+      if [ "${diff_only}" = NO ]; then
+        [ -n "${verbose}" ] && echo -n "Importing file '$file'"
+      fi
 
       case "${file##*/}" in
         *.[0-9])
@@ -212,5 +217,13 @@ for m in ${modules}; do
         * ) error "Unsupported file: ${file}."
           ;;
       esac
+
+      if [ "${diff_only}" = NO ]; then
+	if [ -n "${verbose}" -a -n "${changed_file}" ]; then
+	  echo '- changed.'
+	else
+	  echo '- unchanged.'
+	fi
+      fi
     done
 done
