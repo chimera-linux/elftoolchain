@@ -218,8 +218,8 @@ for m in ${modules}; do
           ;;
       esac
 
-      if [ "${diff_only}" = NO ]; then
-	if [ -n "${verbose}" -a -n "${changed_file}" ]; then
+      if [ "${diff_only}" = NO -a -n "${verbose}" ]; then
+	if [ -n "${changed_file}" ]; then
 	  echo '- changed.'
 	else
 	  echo '- unchanged.'
