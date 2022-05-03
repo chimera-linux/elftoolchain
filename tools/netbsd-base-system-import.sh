@@ -33,6 +33,7 @@ err() {
 
 ## Parse options.
 diff_only=NO
+verbose=NO
 options=":d:hs:m:vD"
 while getopts "$options" var; do
   case $var in
@@ -182,12 +183,12 @@ trap "rm ${srctmp} ${srcmptmp} ${dstcmptmp};" 0 1 2 3 15
 #    - Display diffs or move changed files to the destination directory.
 
 for m in ${modules}; do
-  [ -n "$verbose" ] && echo Examining module "'$m'".
+  [ "$verbose" = YES ] && echo Examining module "'$m'".
 
   # Create any new directories under the destination root.
   (cd "${srcdir}" && find "${m}" -depth -type d) | \
     while read dir; do
-      [ -n "${verbose}" ] && echo "Creating '$dir'."
+      [ "${verbose}" = YES ] && echo "Creating '$dir'."
       mkdir -p "${dstdir}/${dir}"
     done
 
@@ -198,7 +199,7 @@ for m in ${modules}; do
       changed_file=''  # Set by 'compare_and_move_or_diff'.
 
       if [ "${diff_only}" = NO ]; then
-        [ -n "${verbose}" ] && echo -n "Importing file '$file'"
+        [ "${verbose}" = YES ] && echo -n "Importing file '$file'"
       fi
 
       case "${file##*/}" in
@@ -218,7 +219,7 @@ for m in ${modules}; do
           ;;
       esac
 
-      if [ "${diff_only}" = NO -a -n "${verbose}" ]; then
+      if [ "${diff_only}" = NO -a "${verbose}" = YES ]; then
 	if [ -n "${changed_file}" ]; then
 	  echo '- changed.'
 	else
