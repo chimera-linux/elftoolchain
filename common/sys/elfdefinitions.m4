@@ -54,8 +54,6 @@ divert(0)dnl
 #ifndef _SYS_ELFDEFINITIONS_H_
 #define _SYS_ELFDEFINITIONS_H_
 
-#include <stdint.h>
-
 /*
  * Types of capabilities.
  */

@@ -30,7 +30,10 @@
 #define	_LIBELF_H_
 
 #include <sys/types.h>
-#include <sys/elfdefinitions.h>
+
+#include <stdint.h>
+
+#include "elfdefinitions.h"
 
 /* Library private data structures */
 typedef struct _Elf Elf;
