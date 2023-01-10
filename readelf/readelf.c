@@ -475,7 +475,7 @@ elf_machine(unsigned int mach)
 	case EM_IAMCU: return "Intel MCU";
 	case EM_88K: return "Motorola 88000";
 	case EM_860: return "Intel i860";
-	case EM_MIPS: return "MIPS R3000 Big-Endian only";
+	case EM_MIPS: return "MIPS R3000";
 	case EM_S370: return "IBM System/370";
 	case EM_MIPS_RS3_LE: return "MIPS R3000 Little-Endian";
 	case EM_PARISC: return "HP PA-RISC";
