@@ -63,6 +63,7 @@
 #define	DW_TAG_const_type		0x26
 #define	DW_TAG_constant			0x27
 #define	DW_TAG_enumerator		0x28
+#define	DW_TAG_file_type		0x29
 #define	DW_TAG_friend			0x2a
 #define	DW_TAG_namelist			0x2b
 #define	DW_TAG_namelist_item		0x2c
