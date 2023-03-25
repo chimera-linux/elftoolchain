@@ -669,4 +669,29 @@
 #define	DW_EH_PE_aligned		0x50
 #define	DW_EH_PE_omit			0xff
 
+/*
+ * Package file section identifier encodings.
+ */
+
+#define DW_SECT_INFO                    1 /* .debug_info.dwo */
+					  /* Reserved: 2 */
+#define DW_SECT_ABBREV                  3 /* .debug_abbrev.dwo */
+#define DW_SECT_LINE                    4 /* .debug_line.dwo */
+#define DW_SECT_LOCLISTS                5 /* .debug_loclists.dwo */
+#define DW_SECT_STR_OFFSETS             6 /* .debug_str_offsets.dwo */
+#define DW_SECT_MACRO                   7 /* .debug_macro.dwo */
+#define DW_SECT_RNGLISTS                8 /* .debug_rnglists.dwo */
+
+/*
+ * Unit header unit type encodings.
+ */
+#define DW_UT_compile                   0x01
+#define DW_UT_type                      0x02
+#define DW_UT_partial                   0x03
+#define DW_UT_skeleton                  0x04
+#define DW_UT_split_compile             0x05
+#define DW_UT_split_type                0x06
+#define DW_UT_lo_user                   0x80
+#define DW_UT_hi_user                   0XFF
+
 #endif /* !_DWARF_H_ */
