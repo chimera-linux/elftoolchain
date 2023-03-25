@@ -91,6 +91,14 @@
 #define	DW_TAG_type_unit		0x41
 #define	DW_TAG_rvalue_reference_type	0x42
 #define	DW_TAG_template_alias		0x43
+#define	DW_TAG_coarray_type		0x44
+#define	DW_TAG_generic_subrange		0x45
+#define	DW_TAG_dynamic_type		0x46
+#define	DW_TAG_atomic_type		0x47
+#define	DW_TAG_call_site		0x48
+#define	DW_TAG_call_site_parameter	0x49
+#define	DW_TAG_skeleton_unit		0x4a
+#define	DW_TAG_immutable_type		0x4b
 #define	DW_TAG_lo_user			0x4080
 #define	DW_TAG_hi_user			0xffff
 
