@@ -34,15 +34,20 @@
 #define	DW_TAG_entry_point		0x03
 #define	DW_TAG_enumeration_type		0x04
 #define	DW_TAG_formal_parameter		0x05
+	/* Reserved: 0x06, 0x07. */
 #define	DW_TAG_imported_declaration	0x08
+	/* Reserved: 0x09. */
 #define	DW_TAG_label			0x0a
 #define	DW_TAG_lexical_block		0x0b
+	/* Reserved: 0x0C. */
 #define	DW_TAG_member			0x0d
+	/* Reserved: 0x0E. */
 #define	DW_TAG_pointer_type		0x0f
 #define	DW_TAG_reference_type		0x10
 #define	DW_TAG_compile_unit		0x11
 #define	DW_TAG_string_type		0x12
 #define	DW_TAG_structure_type		0x13
+	/* Reserved: 0x14. */
 #define	DW_TAG_subroutine_type		0x15
 #define	DW_TAG_typedef			0x16
 #define	DW_TAG_union_type		0x17
@@ -86,6 +91,7 @@
 #define	DW_TAG_unspecified_type         0x3b
 #define	DW_TAG_partial_unit             0x3c
 #define	DW_TAG_imported_unit            0x3d
+	/* Reserved: 0x3E. */
 #define	DW_TAG_condition                0x3f
 #define	DW_TAG_shared_type              0x40
 #define	DW_TAG_type_unit		0x41
@@ -121,11 +127,13 @@
 #define	DW_AT_sibling			0x01
 #define	DW_AT_location			0x02
 #define	DW_AT_name			0x03
+	/* Reserved: 0x04, 0x05, 0x06, 0x07, 0x08. */
 #define	DW_AT_ordering			0x09
 #define	DW_AT_subscr_data		0x0a
 #define	DW_AT_byte_size			0x0b
 #define	DW_AT_bit_offset		0x0c
 #define	DW_AT_bit_size			0x0d
+	/* Reserved: 0x0e. */
 #define	DW_AT_element_list		0x0f
 #define	DW_AT_stmt_list			0x10
 #define	DW_AT_low_pc			0x11
@@ -142,16 +150,23 @@
 #define	DW_AT_const_value		0x1c
 #define	DW_AT_containing_type		0x1d
 #define	DW_AT_default_value		0x1e
+	/* Reserved: 0x1f. */
 #define	DW_AT_inline			0x20
 #define	DW_AT_is_optional		0x21
 #define	DW_AT_lower_bound		0x22
+	/* Reserved: 0x23, 0x24. */
 #define	DW_AT_producer			0x25
+	/* Reserved: 0x26. */
 #define	DW_AT_prototyped		0x27
+	/* Reserved: 0x28, 0x29. */
 #define	DW_AT_return_addr		0x2a
+	/* Reserved: 0x2b. */
 #define	DW_AT_start_scope		0x2c
+	/* Reserved: 0x2d. */
 #define	DW_AT_bit_stride		0x2e
 #define	DW_AT_stride_size		0x2e
 #define	DW_AT_upper_bound		0x2f
+	/* Reserved: 0x30. */
 #define	DW_AT_abstract_origin		0x31
 #define	DW_AT_accessibility		0x32
 #define	DW_AT_address_class		0x33
