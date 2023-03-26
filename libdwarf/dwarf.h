@@ -29,6 +29,31 @@
 #ifndef	_DWARF_H_
 #define	_DWARF_H_
 
+/*
+ * Package file section identifier encodings.
+ */
+
+#define DW_SECT_INFO                    1 /* .debug_info.dwo */
+					  /* Reserved: 2 */
+#define DW_SECT_ABBREV                  3 /* .debug_abbrev.dwo */
+#define DW_SECT_LINE                    4 /* .debug_line.dwo */
+#define DW_SECT_LOCLISTS                5 /* .debug_loclists.dwo */
+#define DW_SECT_STR_OFFSETS             6 /* .debug_str_offsets.dwo */
+#define DW_SECT_MACRO                   7 /* .debug_macro.dwo */
+#define DW_SECT_RNGLISTS                8 /* .debug_rnglists.dwo */
+
+/*
+ * Unit header unit type encodings.
+ */
+#define DW_UT_compile                   0x01
+#define DW_UT_type                      0x02
+#define DW_UT_partial                   0x03
+#define DW_UT_skeleton                  0x04
+#define DW_UT_split_compile             0x05
+#define DW_UT_split_type                0x06
+#define DW_UT_lo_user                   0x80
+#define DW_UT_hi_user                   0XFF
+
 #define	DW_TAG_array_type		0x01
 #define	DW_TAG_class_type		0x02
 #define	DW_TAG_entry_point		0x03
@@ -611,15 +636,21 @@
 #define	DW_ATE_HP_VAX_complex_float	0x8f	/* Complex FP (F, G) */
 #define	DW_ATE_HP_VAX_complex_float_d	0x90	/* Complex FP (D) */
 
-#define	DW_ACCESS_public		0x01
-#define	DW_ACCESS_protected	 	0x02
-#define	DW_ACCESS_private	 	0x03
+#define	DW_DS_unsigned			0x01
+#define	DW_DS_leading_overpunch		0x02
+#define	DW_DS_trailing_overpunch	0x03
+#define	DW_DS_leading_separate		0x04
+#define	DW_DS_trailing_separate		0x05
 
 #define	DW_END_default			0x00
 #define	DW_END_big			0x01
 #define	DW_END_little			0x02
 #define	DW_END_lo_user			0x40
 #define	DW_END_high_user		0xff
+
+#define	DW_ACCESS_public		0x01
+#define	DW_ACCESS_protected	 	0x02
+#define	DW_ACCESS_private	 	0x03
 
 #define	DW_VIS_local		 	0x01
 #define	DW_VIS_exported		 	0x02
@@ -683,6 +714,17 @@
 #define	DW_CC_lo_user		 	0x40
 #define	DW_CC_hi_user		 	0xff
 
+#define	DW_INL_not_inlined	 	0x00
+#define	DW_INL_inlined		 	0x01
+#define	DW_INL_declared_not_inlined 	0x02
+#define	DW_INL_declared_inlined	 	0x03
+
+#define	DW_ORD_row_major		0x00
+#define	DW_ORD_col_major		0x01
+
+#define	DW_DSC_label		 	0x00
+#define	DW_DSC_range		 	0x01
+
 /*
  * Name index attribute encodings.
  */
@@ -700,23 +742,6 @@
 #define	DW_DEFAULTED_no			0x00
 #define	DW_DEFAULTED_in_class		0x01
 #define	DW_DEFAULTED_out_of_class	0x02
-
-#define	DW_INL_not_inlined	 	0x00
-#define	DW_INL_inlined		 	0x01
-#define	DW_INL_declared_not_inlined 	0x02
-#define	DW_INL_declared_inlined	 	0x03
-
-#define	DW_ORD_row_major		0x00
-#define	DW_ORD_col_major		0x01
-
-#define	DW_DS_unsigned			0x01
-#define	DW_DS_leading_overpunch		0x02
-#define	DW_DS_trailing_overpunch	0x03
-#define	DW_DS_leading_separate		0x04
-#define	DW_DS_trailing_separate		0x05
-
-#define	DW_DSC_label		 	0x00
-#define	DW_DSC_range		 	0x01
 
 #define	DW_LNS_copy		 	0x01
 #define	DW_LNS_advance_pc	 	0x02
@@ -834,30 +859,5 @@
 #define	DW_EH_PE_funcrel		0x40
 #define	DW_EH_PE_aligned		0x50
 #define	DW_EH_PE_omit			0xff
-
-/*
- * Package file section identifier encodings.
- */
-
-#define DW_SECT_INFO                    1 /* .debug_info.dwo */
-					  /* Reserved: 2 */
-#define DW_SECT_ABBREV                  3 /* .debug_abbrev.dwo */
-#define DW_SECT_LINE                    4 /* .debug_line.dwo */
-#define DW_SECT_LOCLISTS                5 /* .debug_loclists.dwo */
-#define DW_SECT_STR_OFFSETS             6 /* .debug_str_offsets.dwo */
-#define DW_SECT_MACRO                   7 /* .debug_macro.dwo */
-#define DW_SECT_RNGLISTS                8 /* .debug_rnglists.dwo */
-
-/*
- * Unit header unit type encodings.
- */
-#define DW_UT_compile                   0x01
-#define DW_UT_type                      0x02
-#define DW_UT_partial                   0x03
-#define DW_UT_skeleton                  0x04
-#define DW_UT_split_compile             0x05
-#define DW_UT_split_type                0x06
-#define DW_UT_lo_user                   0x80
-#define DW_UT_hi_user                   0XFF
 
 #endif /* !_DWARF_H_ */
