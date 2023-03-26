@@ -678,8 +678,28 @@
 #define	DW_CC_normal		 	0x01
 #define	DW_CC_program		 	0x02
 #define	DW_CC_nocall		 	0x03
+#define	DW_CC_pass_by_reference		0x04
+#define	DW_CC_pass_by_value		0x05
 #define	DW_CC_lo_user		 	0x40
 #define	DW_CC_hi_user		 	0xff
+
+/*
+ * Name index attribute encodings.
+ */
+#define	DW_IDX_compile_unit		1
+#define	DW_IDX_type_unit		2
+#define	DW_IDX_die_offset		3
+#define	DW_IDX_parent			4
+#define	DW_IDX_type_hash		5
+#define	DW_IDX_lo_user			0x2000
+#define	DW_IDX_hi_user			0x3fff
+
+/*
+ * Defaulted attribute encodings.
+ */
+#define	DW_DEFAULTED_no			0x00
+#define	DW_DEFAULTED_in_class		0x01
+#define	DW_DEFAULTED_out_of_class	0x02
 
 #define	DW_INL_not_inlined	 	0x00
 #define	DW_INL_inlined		 	0x01
@@ -716,6 +736,35 @@
 #define	DW_LNE_define_file	 	0x03
 #define	DW_LNE_lo_user		 	0x80
 #define	DW_LNE_hi_user		 	0xff
+
+/*
+ * Line number header entry format encodings.
+ */
+#define	DW_LNCT_path			0x1
+#define	DW_LNCT_directory_index		0x2
+#define	DW_LNCT_timestamp		0x3
+#define	DW_LNCT_size			0x4
+#define	DW_LNCT_MD5			0x5
+#define	DW_LNCT_lo_user			0x2000
+#define	DW_LNCT_hi_user			0x3fff
+
+/*
+ * Macro information entry type encodings.
+ */
+#define	DW_MACRO_define			0x01
+#define	DW_MACRO_undef			0x02
+#define	DW_MACRO_start_file		0x03
+#define	DW_MACRO_end_file		0x04
+#define	DW_MACRO_define_strp		0x05
+#define	DW_MACRO_undef_strp		0x06
+#define	DW_MACRO_import			0x07
+#define	DW_MACRO_define_sup		0x08
+#define	DW_MACRO_undef_sup		0x09
+#define	DW_MACRO_import_sup		0x0a
+#define	DW_MACRO_define_strx		0x0b
+#define	DW_MACRO_undef_strx		0x0c
+#define	DW_MACRO_lo_user		0xe0
+#define	DW_MACRO_hi_user		0xff
 
 #define	DW_MACINFO_define	 	0x01
 #define	DW_MACINFO_undef		0x02
