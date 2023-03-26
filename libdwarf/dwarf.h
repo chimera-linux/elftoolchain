@@ -323,6 +323,7 @@
 #define	DW_AT_APPLE_property			0x3fed
 
 #define	DW_FORM_addr			0x01
+	/* Reserved: 0x02. */
 #define	DW_FORM_block2			0x03
 #define	DW_FORM_block4			0x04
 #define	DW_FORM_data2			0x05
@@ -346,7 +347,25 @@
 #define	DW_FORM_sec_offset		0x17
 #define	DW_FORM_exprloc			0x18
 #define	DW_FORM_flag_present		0x19
+#define	DW_FORM_strx			0x1a
+#define	DW_FORM_addrx			0x1b
+#define	DW_FORM_ref_sup4		0x1c
+#define	DW_FORM_strp_sup		0x1d
+#define	DW_FORM_data16			0x1e
+#define	DW_FORM_line_strp		0x1f
 #define	DW_FORM_ref_sig8		0x20
+#define	DW_FORM_implicit_const		0x21
+#define	DW_FORM_loclistx		0x22
+#define	DW_FORM_rnglistx		0x23
+#define	DW_FORM_ref_sup8		0x24
+#define	DW_FORM_strx1			0x25
+#define	DW_FORM_strx2			0x26
+#define	DW_FORM_strx3			0x27
+#define	DW_FORM_strx4			0x28
+#define	DW_FORM_addrx1			0x29
+#define	DW_FORM_addrx2			0x2a
+#define	DW_FORM_addrx3			0x2b
+#define	DW_FORM_addrx4			0x2c
 #define	DW_FORM_GNU_ref_alt		0x1f20
 #define	DW_FORM_GNU_strp_alt		0x1f21
 
