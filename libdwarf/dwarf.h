@@ -30,11 +30,12 @@
 #define	_DWARF_H_
 
 /*
- * Package file section identifier encodings.
+ * DWARF5 Section 7.3.5.3, Table 7.1: Package file section identifier
+ * encodings.
  */
 
 #define DW_SECT_INFO                    1 /* .debug_info.dwo */
-					  /* Reserved: 2 */
+	/* Reserved: 2 */
 #define DW_SECT_ABBREV                  3 /* .debug_abbrev.dwo */
 #define DW_SECT_LINE                    4 /* .debug_line.dwo */
 #define DW_SECT_LOCLISTS                5 /* .debug_loclists.dwo */
@@ -42,9 +43,11 @@
 #define DW_SECT_MACRO                   7 /* .debug_macro.dwo */
 #define DW_SECT_RNGLISTS                8 /* .debug_rnglists.dwo */
 
+
 /*
- * Unit header unit type encodings.
+ * DWARF5 Section 7.5.1, Table 7.2: Unit header unit type encodings.
  */
+
 #define DW_UT_compile                   0x01
 #define DW_UT_type                      0x02
 #define DW_UT_partial                   0x03
@@ -53,6 +56,10 @@
 #define DW_UT_split_type                0x06
 #define DW_UT_lo_user                   0x80
 #define DW_UT_hi_user                   0XFF
+
+/*
+ * DWARF5 Section 7.5.3, Table 7.3: Tag encodings.
+ */
 
 #define	DW_TAG_array_type		0x01
 #define	DW_TAG_class_type		0x02
@@ -146,8 +153,16 @@
 #define	DW_TAG_GNU_call_site			0x4109
 #define	DW_TAG_GNU_call_site_parameter		0x410a
 
+/*
+ * DWARF5 Section 7.5.3, Table 7.4: Child determination encodings.
+ */
+
 #define	DW_CHILDREN_no			0x00
 #define	DW_CHILDREN_yes			0x01
+
+/*
+ * DWARF5 Section 7.5.4, Table 7.5: Attribute encodings.
+ */
 
 #define	DW_AT_sibling			0x01
 #define	DW_AT_location			0x02
@@ -347,6 +362,10 @@
 #define	DW_AT_APPLE_objc_complete_type		0x3fec
 #define	DW_AT_APPLE_property			0x3fed
 
+/*
+ * DWARF5 Section 7.5.6, Table 7.6: Attribute form encodings.
+ */
+
 #define	DW_FORM_addr			0x01
 	/* Reserved: 0x02. */
 #define	DW_FORM_block2			0x03
@@ -395,8 +414,9 @@
 #define	DW_FORM_GNU_strp_alt		0x1f21
 
 /*
- * DWARF operation encodings.
+ * DWARF5 Section 7.7.1, Table 7.9: DWARF operation encodings.
  */
+
 	/* Reserved: 0x01, 0x02. */
 #define	DW_OP_addr			0x03
 	/* Reserved: 0x04, 0x05. */
@@ -583,8 +603,10 @@
 #define	DW_OP_GNU_const_index		0xfc
 
 /*
- * DWARF location list entry encodings.
+ * DWARF5 Section 7.7.3, Table 7.10: location list entry encoding
+ * values.
  */
+
 #define	DW_LLE_end_of_list		0x00
 #define	DW_LLE_base_addressx		0x01
 #define	DW_LLE_startx_endx		0x02
@@ -596,8 +618,9 @@
 #define	DW_LLE_start_lenght		0x08
 
 /*
- * DWARF attribute encodings.
+ * DWARF5 Section 7.8, Table 7.11: Base type encoding values.
  */
+
 #define	DW_ATE_address		 	0x1
 #define	DW_ATE_boolean		 	0x2
 #define	DW_ATE_complex_float	 	0x3
@@ -636,11 +659,19 @@
 #define	DW_ATE_HP_VAX_complex_float	0x8f	/* Complex FP (F, G) */
 #define	DW_ATE_HP_VAX_complex_float_d	0x90	/* Complex FP (D) */
 
+/*
+ * DWARF5 Section 7.8, Table 7.12: Decimal sign encodings.
+ */
+
 #define	DW_DS_unsigned			0x01
 #define	DW_DS_leading_overpunch		0x02
 #define	DW_DS_trailing_overpunch	0x03
 #define	DW_DS_leading_separate		0x04
 #define	DW_DS_trailing_separate		0x05
+
+/*
+ * DWARF5 Section 7.8, Table 7.13: Endianity encodings.
+ */
 
 #define	DW_END_default			0x00
 #define	DW_END_big			0x01
@@ -648,17 +679,33 @@
 #define	DW_END_lo_user			0x40
 #define	DW_END_high_user		0xff
 
+/*
+ * DWARF5 Section 7.9, Table 7.14: Accessibility encodings.
+ */
+
 #define	DW_ACCESS_public		0x01
 #define	DW_ACCESS_protected	 	0x02
 #define	DW_ACCESS_private	 	0x03
+
+/*
+ * DWARF5 Section 7.10, Table 7.15: Visibility encodings.
+ */
 
 #define	DW_VIS_local		 	0x01
 #define	DW_VIS_exported		 	0x02
 #define	DW_VIS_qualified		0x03
 
+/*
+ * DWARF5 Section 7.11, Table 7.16: Virtuality encodings.
+ */
+
 #define	DW_VIRTUALITY_none	 	0x00
 #define	DW_VIRTUALITY_virtual	 	0x01
 #define	DW_VIRTUALITY_pure_virtual 	0x02
+
+/*
+ * DWARF5 Section 7.12, Table 7.17: Language encodings.
+ */
 
 #define	DW_LANG_C89		 	0x0001
 #define	DW_LANG_C		 	0x0002
@@ -701,10 +748,18 @@
 #define	DW_LANG_Mips_Assembler		0x8001
 #define	DW_LANG_hi_user		 	0xffff
 
+/*
+ * DWARF5 Section 7.14, Table 7.18: Identifier case encodings.
+ */
+
 #define	DW_ID_case_sensitive	 	0x00
 #define	DW_ID_up_case		 	0x01
 #define	DW_ID_down_case		 	0x02
 #define	DW_ID_case_insensitive	 	0x03
+
+/*
+ * DWARF5 Section 7.15, Table 7.19: Calling convention encodings.
+ */
 
 #define	DW_CC_normal		 	0x01
 #define	DW_CC_program		 	0x02
@@ -714,20 +769,33 @@
 #define	DW_CC_lo_user		 	0x40
 #define	DW_CC_hi_user		 	0xff
 
+/*
+ * DWARF5 Section 7.16, Table 7.20: Inline encodings.
+ */
+
 #define	DW_INL_not_inlined	 	0x00
 #define	DW_INL_inlined		 	0x01
 #define	DW_INL_declared_not_inlined 	0x02
 #define	DW_INL_declared_inlined	 	0x03
 
+/*
+ * DWARF5 Section 7.17, Table 7.21: Ordering encodings.
+ */
+
 #define	DW_ORD_row_major		0x00
 #define	DW_ORD_col_major		0x01
+
+/*
+ * DWARF5 Section 7.18, Table 7.22: Discriminant descriptor encodings.
+ */
 
 #define	DW_DSC_label		 	0x00
 #define	DW_DSC_range		 	0x01
 
 /*
- * Name index attribute encodings.
+ * DWARF5 Section 7.19, Table 7.23: Name index attribute encodings.
  */
+
 #define	DW_IDX_compile_unit		1
 #define	DW_IDX_type_unit		2
 #define	DW_IDX_die_offset		3
@@ -737,11 +805,17 @@
 #define	DW_IDX_hi_user			0x3fff
 
 /*
- * Defaulted attribute encodings.
+ * DWARF5 Section 7.20, Table 7.24: Defaulted attribute encodings.
  */
+
 #define	DW_DEFAULTED_no			0x00
 #define	DW_DEFAULTED_in_class		0x01
 #define	DW_DEFAULTED_out_of_class	0x02
+
+/*
+ * DWARF5 Section 7.22, Table 7.25: Line number standard opcode
+ * encodings.
+ */
 
 #define	DW_LNS_copy		 	0x01
 #define	DW_LNS_advance_pc	 	0x02
@@ -756,15 +830,22 @@
 #define	DW_LNS_set_epilogue_begin 	0x0b
 #define	DW_LNS_set_isa		 	0x0c
 
+/*
+ * DWARF5 Section 7.22, Table 7.26: Line number extended opcode
+ * encodings.
+ */
+
 #define	DW_LNE_end_sequence	 	0x01
 #define	DW_LNE_set_address	 	0x02
-#define	DW_LNE_define_file	 	0x03
+#define	DW_LNE_define_file	 	0x03 /* Marked reserved in DWARF5. */
 #define	DW_LNE_lo_user		 	0x80
 #define	DW_LNE_hi_user		 	0xff
 
 /*
- * Line number header entry format encodings.
+ * DWARF5 Section 7.22, Table 7.27: Line number header entry format
+ * encodings.
  */
+
 #define	DW_LNCT_path			0x1
 #define	DW_LNCT_directory_index		0x2
 #define	DW_LNCT_timestamp		0x3
@@ -774,8 +855,10 @@
 #define	DW_LNCT_hi_user			0x3fff
 
 /*
- * Macro information entry type encodings.
+ * DWARF5 Section 7.23, Table 7.28: Macro information entry type
+ * encodings.
  */
+
 #define	DW_MACRO_define			0x01
 #define	DW_MACRO_undef			0x02
 #define	DW_MACRO_start_file		0x03
@@ -796,6 +879,10 @@
 #define	DW_MACINFO_start_file	 	0x03
 #define	DW_MACINFO_end_file	 	0x04
 #define	DW_MACINFO_vendor_ext	 	0xff
+
+/*
+ * DWARF5 Section 7.24, Table 7.29: Call frame instruction encodings.
+ */
 
 #define	DW_CFA_advance_loc		0x40
 #define	DW_CFA_offset	 		0x80
@@ -829,8 +916,9 @@
 #define	DW_CFA_high_user	 	0x3f
 
 /*
- * Range list entry encoding values.
+ * DWARF5 Section 7.25, Table 7.30: Range list entry encoding values.
  */
+
 #define	DW_RLE_end_of_list		0x00
 #define	DW_RLE_base_addressx		0x01
 #define	DW_RLE_startx_endx		0x02
