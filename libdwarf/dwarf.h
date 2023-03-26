@@ -804,6 +804,18 @@
 #define	DW_CFA_high_user	 	0x3f
 
 /*
+ * Range list entry encoding values.
+ */
+#define	DW_RLE_end_of_list		0x00
+#define	DW_RLE_base_addressx		0x01
+#define	DW_RLE_startx_endx		0x02
+#define	DW_RLE_startx_length		0x03
+#define	DW_RLE_offset_pair		0x04
+#define	DW_RLE_base_address		0x05
+#define	DW_RLE_start_end		0x06
+#define	DW_RLE_start_length		0x07
+
+/*
  * LSB(Linux Standard Base) extension to DWARF2.
  */
 
