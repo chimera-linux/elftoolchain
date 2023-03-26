@@ -229,6 +229,36 @@
 #define	DW_AT_const_expr		0x6c
 #define	DW_AT_enum_class		0x6d
 #define	DW_AT_linkage_name		0x6e
+#define	DW_AT_string_length_bit_size	0x6f
+#define	DW_AT_string_length_byte_size	0x70
+#define	DW_AT_rank			0x71
+#define	DW_AT_str_offsets_base		0x72
+#define	DW_AT_addr_base			0x73
+#define	DW_AT_rnglists_base		0x74
+	/* Reserved: 0x75. */
+#define	DW_AT_dwo_name			0x76
+#define	DW_AT_reference			0x77
+#define	DW_AT_rvalue_reference		0x78
+#define	DW_AT_macros			0x79
+#define	DW_AT_call_all_calls		0x7a
+#define	DW_AT_call_all_source_calls	0x7b
+#define	DW_AT_call_all_tail_calls	0x7c
+#define	DW_AT_call_all_return_pc	0x7d
+#define	DW_AT_call_all_value		0x7e
+#define	DW_AT_call_all_origin		0x7f
+#define	DW_AT_call_parameter		0x80
+#define	DW_AT_call_pc			0x81
+#define	DW_AT_call_tail_call		0x82
+#define	DW_AT_call_target		0x83
+#define	DW_AT_call_target_clobbered	0x84
+#define	DW_AT_call_data_location	0x85
+#define	DW_AT_call_data_value		0x86
+#define	DW_AT_noreturn			0x87
+#define	DW_AT_alignment			0x88
+#define	DW_AT_export_symbols		0x89
+#define	DW_AT_deleted			0x8a
+#define	DW_AT_defaulted			0x8b
+#define	DW_AT_loclists_base		0x8c
 #define	DW_AT_lo_user			0x2000
 #define	DW_AT_hi_user			0x3fff
 
