@@ -557,6 +557,22 @@
 #define	DW_OP_GNU_addr_index		0xfb
 #define	DW_OP_GNU_const_index		0xfc
 
+/*
+ * DWARF location list entry encodings.
+ */
+#define	DW_LLE_end_of_list		0x00
+#define	DW_LLE_base_addressx		0x01
+#define	DW_LLE_startx_endx		0x02
+#define	DW_LLE_startx_length		0x03
+#define	DW_LLE_offset_pair		0x04
+#define	DW_LLE_default_location		0x05
+#define	DW_LLE_base_address		0x06
+#define	DW_LLE_start_end		0x07
+#define	DW_LLE_start_lenght		0x08
+
+/*
+ * DWARF attribute encodings.
+ */
 #define	DW_ATE_address		 	0x1
 #define	DW_ATE_boolean		 	0x2
 #define	DW_ATE_complex_float	 	0x3
