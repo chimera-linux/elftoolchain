@@ -369,8 +369,14 @@
 #define	DW_FORM_GNU_ref_alt		0x1f20
 #define	DW_FORM_GNU_strp_alt		0x1f21
 
+/*
+ * DWARF operation encodings.
+ */
+	/* Reserved: 0x01, 0x02. */
 #define	DW_OP_addr			0x03
+	/* Reserved: 0x04, 0x05. */
 #define	DW_OP_deref			0x06
+	/* Reserved: 0x07. */
 #define	DW_OP_const1u			0x08
 #define	DW_OP_const1s			0x09
 #define	DW_OP_const2u			0x0a
@@ -523,6 +529,16 @@
 #define	DW_OP_bit_piece			0x9d
 #define	DW_OP_implicit_value		0x9e
 #define	DW_OP_stack_value		0x9f
+#define	DW_OP_implicit_pointer		0xa0
+#define	DW_OP_addrx			0xa1
+#define	DW_OP_constx			0xa2
+#define	DW_OP_entry_value		0xa3
+#define	DW_OP_const_type		0xa4
+#define	DW_OP_regval_type		0xa5
+#define	DW_OP_deref_type		0xa6
+#define	DW_OP_xderef_type		0xa7
+#define	DW_OP_convert			0xa8
+#define	DW_OP_reinterpret		0xa9
 #define	DW_OP_lo_user		 	0xe0
 #define	DW_OP_hi_user		 	0xff
 
