@@ -617,7 +617,8 @@ static void	elf_print_rel(struct elfdump *ed, struct section *s,
 static void	elf_print_reloc(struct elfdump *ed);
 static void	elf_print_got(struct elfdump *ed);
 static void	elf_print_got_section(struct elfdump *ed, struct section *s);
-static void	elf_print_note(struct elfdump *ed);
+static void	elf_print_notes(struct elfdump *ed);
+static void	elf_print_note(struct elfdump *ed, struct section *s);
 static void	elf_print_svr4_hash(struct elfdump *ed, struct section *s);
 static void	elf_print_svr4_hash64(struct elfdump *ed, struct section *s);
 static void	elf_print_gnu_hash(struct elfdump *ed, struct section *s);
@@ -1098,7 +1099,7 @@ elf_print_elf(struct elfdump *ed)
 	if (ed->options & ED_SYMVER)
 		elf_print_symver(ed);
 	if (ed->options & ED_NOTE)
-		elf_print_note(ed);
+		elf_print_notes(ed);
 	if (ed->options & ED_HASH)
 		elf_print_hash(ed);
 	if (ed->options & ED_CHECKSUM)
@@ -2050,12 +2051,11 @@ elf_print_got(struct elfdump *ed)
 }
 
 /*
- * Dump the content of .note.ABI-tag section.
+ * Dump the content of a single note section.
  */
 static void
-elf_print_note(struct elfdump *ed)
+elf_print_note(struct elfdump *ed, struct section *s)
 {
-	struct section	*s;
 	Elf_Data        *data;
 	Elf_Note	*en;
 	uint32_t	 namesz;
@@ -2066,16 +2066,6 @@ elf_print_note(struct elfdump *ed)
 	uint8_t		*src;
 	char		 idx[17];
 
-	s = NULL;
-	for (i = 0; (size_t)i < ed->shnum; i++) {
-		s = &ed->sl[i];
-		if (s->type == SHT_NOTE && s->name &&
-		    !strcmp(s->name, ".note.ABI-tag") &&
-		    (STAILQ_EMPTY(&ed->snl) || find_name(ed, s->name)))
-			break;
-	}
-	if ((size_t)i >= ed->shnum)
-		return;
 	if (ed->flags & SOLARIS_FMT)
 		PRT("\nNote Section:  %s\n", s->name);
 	else
@@ -2135,6 +2125,27 @@ elf_print_note(struct elfdump *ed)
 		}
 		src += roundup2(descsz, 4);
 		count -= roundup2(descsz, 4);
+	}
+}
+
+/*
+ * Dump the content of note sections.
+ */
+static void
+elf_print_notes(struct elfdump *ed)
+{
+	struct section	*s;
+	int		 i;
+	
+	if (!STAILQ_EMPTY(&ed->snl))
+		return;
+
+	s = NULL;
+	for (i = 0; (size_t)i < ed->shnum; i++) {
+		s = &ed->sl[i];
+		if (s->type != SHT_NOTE)
+			continue;
+		elf_print_note(ed, s);
 	}
 }
 
