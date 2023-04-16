@@ -14,7 +14,7 @@ operating systems.
   Operating System    Version    Supported Architectures
   -----------------   --------   -----------------------
   `DragonFly BSD`_    5.8.1      amd64
-  FreeBSD_            12.2       amd64 & i386
+  FreeBSD_            13.1       arm64, amd64 & i386
   Minix_              3.0.2      i386
   NetBSD_             9.1        amd64
   OpenBSD_            6.5        amd64
@@ -58,7 +58,7 @@ Prerequisites
     - Building additional documentation is not currently supported
       under DragonFly BSD.
 
-:FreeBSD 12.2:
+:FreeBSD 13.1:
     - The core libraries and utilities should build out of the box on
       a stock install of FreeBSD.
 
@@ -70,12 +70,12 @@ Prerequisites
             % cd <SRCDIR>/test/tet
             % tar -xf /PATH/TO/DOWNLOADED/TET-3.8-SOURCES
 
-      #. The ``py37-yaml`` package needs to be installed::
+      #. The ``py39-yaml`` package needs to be installed::
 
-            % sudo pkg install py37-yaml
+            % sudo pkg install py39-yaml
 
     - Building additional documentation is not currently supported under
-      FreeBSD 12.2.
+      FreeBSD 13.1.
 
 :Minix 3.2.0:
     - The following packages are pre-requisites for building the
