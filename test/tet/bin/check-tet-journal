@@ -95,6 +95,13 @@ $1 == "220" {
    nWarnings++;
 }
 
+# Catch exec failures.
+$1 == "50" {
+  errors[nErrors] = $3;
+  nErrors++;
+  next;
+}
+
 # Print out warnings and errors.
 END {
     if (nWarnings > 0 || nErrors > 0)
