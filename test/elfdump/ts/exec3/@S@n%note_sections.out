@@ -1,0 +1,29 @@
+
+Note Section:  .note.freebsd.ident
+
+    type   0x1
+    namesz 0x8:
+FreeBSD
+    descsz 0:
+
+Note Section:  .note.freebsd.march
+
+    type   0x2
+    namesz 0x8:
+FreeBSD
+    descsz 0x6:
+      desc[0]   61 72 6d 36   34 00
+
+Note Section:  .note.my_section
+
+    type   0x3
+    namesz 0xa:
+MySection
+    descsz 0x4:
+      desc[0]   07 00 00 00
+
+    type   0x4
+    namesz 0xb:
+MySection1
+    descsz 0x4:
+      desc[0]   30 00 00 00

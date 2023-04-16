@@ -1,0 +1,53 @@
+
+Section Header[1]:  sh_name: .strtab
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x77            sh_type:    [ SHT_STRTAB ]
+    sh_offset:    0x170           sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1
+
+Section Header[2]:  sh_name: .text
+    sh_addr:      0               sh_flags:   [ SHF_ALLOC|SHF_EXECINSTR ]
+    sh_size:      0x8             sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x40            sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4
+
+Section Header[3]:  sh_name: .note.freebsd.ident
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x14            sh_type:    [ SHT_NOTE ]
+    sh_offset:    0x48            sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1
+
+Section Header[4]:  sh_name: .note.freebsd.march
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x1c            sh_type:    [ SHT_NOTE ]
+    sh_offset:    0x5c            sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1
+
+Section Header[5]:  sh_name: .note.my_section
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x38            sh_type:    [ SHT_NOTE ]
+    sh_offset:    0x78            sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1
+
+Section Header[6]:  sh_name: .symtab
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0xc0            sh_type:    [ SHT_SYMTAB ]
+    sh_offset:    0xb0            sh_entsize: 0x18
+    sh_link:      1               sh_info:    7
+    sh_addralign: 0x8
+
+Symbol Table Section:  .symtab
+     index        value           size     type bind oth ver shndx       name
+       [0]      0x00000000 0x000000000000  NOTY LOCL  D    0 UNDEF       
+       [1]      0x00000000 0x000000000000  NOTY LOCL  D    0 .note.freeb $d.0
+       [2]      0x00000000 0x000000000000  NOTY LOCL  D    0 .note.freeb $d.1
+       [3]      0x00000000 0x000000000000  NOTY LOCL  D    0 .note.my_se entry1
+       [4]      0x00000000 0x000000000000  NOTY LOCL  D    0 .note.my_se $d.2
+       [5]      0x0000001c 0x000000000000  NOTY LOCL  D    0 .note.my_se entry2
+       [6]      0x00000000 0x000000000000  NOTY LOCL  D    0 .text       $x.3
+       [7]      0x00000000 0x000000000008  NOTY GLOB  D    0 .text       main

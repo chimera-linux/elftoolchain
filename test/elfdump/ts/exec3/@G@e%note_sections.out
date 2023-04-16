@@ -1,0 +1,17 @@
+
+elf header:
+
+	e_ident: ELFCLASS64 ELFDATA2LSB ELFOSABI_FREEBSD
+	e_type: ET_REL
+	e_machine: EM_AARCH64
+	e_version: EV_CURRENT
+	e_entry: 0
+	e_phoff: 0
+	e_shoff: 488
+	e_flags: 0
+	e_ehsize: 64
+	e_phentsize: 0
+	e_phnum: 0
+	e_shentsize: 64
+	e_shnum: 7
+	e_shstrndx: 1

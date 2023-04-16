@@ -1,0 +1,10 @@
+
+note (.note.freebsd.ident):
+	FreeBSD 0
+
+note (.note.freebsd.march):
+	FreeBSD 913142369
+
+note (.note.my_section):
+	MySection 7
+	MySection1 48

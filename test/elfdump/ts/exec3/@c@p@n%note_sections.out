@@ -1,0 +1,96 @@
+
+section header:
+
+entry: 0
+	sh_name: 
+	sh_type: SHT_NULL
+	sh_flags: 
+	sh_addr: 0
+	sh_offset: 0
+	sh_size: 0
+	sh_link: 0
+	sh_info: 0
+	sh_addralign: 0
+	sh_entsize: 0
+
+entry: 1
+	sh_name: .strtab
+	sh_type: SHT_STRTAB
+	sh_flags: 
+	sh_addr: 0
+	sh_offset: 368
+	sh_size: 119
+	sh_link: 0
+	sh_info: 0
+	sh_addralign: 1
+	sh_entsize: 0
+
+entry: 2
+	sh_name: .text
+	sh_type: SHT_PROGBITS
+	sh_flags: SHF_ALLOC|SHF_EXECINSTR
+	sh_addr: 0
+	sh_offset: 64
+	sh_size: 8
+	sh_link: 0
+	sh_info: 0
+	sh_addralign: 4
+	sh_entsize: 0
+
+entry: 3
+	sh_name: .note.freebsd.ident
+	sh_type: SHT_NOTE
+	sh_flags: 
+	sh_addr: 0
+	sh_offset: 72
+	sh_size: 20
+	sh_link: 0
+	sh_info: 0
+	sh_addralign: 1
+	sh_entsize: 0
+
+entry: 4
+	sh_name: .note.freebsd.march
+	sh_type: SHT_NOTE
+	sh_flags: 
+	sh_addr: 0
+	sh_offset: 92
+	sh_size: 28
+	sh_link: 0
+	sh_info: 0
+	sh_addralign: 1
+	sh_entsize: 0
+
+entry: 5
+	sh_name: .note.my_section
+	sh_type: SHT_NOTE
+	sh_flags: 
+	sh_addr: 0
+	sh_offset: 120
+	sh_size: 56
+	sh_link: 0
+	sh_info: 0
+	sh_addralign: 1
+	sh_entsize: 0
+
+entry: 6
+	sh_name: .symtab
+	sh_type: SHT_SYMTAB
+	sh_flags: 
+	sh_addr: 0
+	sh_offset: 176
+	sh_size: 192
+	sh_link: 1
+	sh_info: 7
+	sh_addralign: 8
+	sh_entsize: 24
+
+note (.note.freebsd.ident):
+	FreeBSD 0
+
+note (.note.freebsd.march):
+	FreeBSD 913142369
+
+note (.note.my_section):
+	MySection 7
+	MySection1 48

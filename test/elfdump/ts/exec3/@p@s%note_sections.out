@@ -1,0 +1,58 @@
+
+symbol table (.symtab):
+
+entry: 0
+	st_name: 
+	st_value: 0
+	st_size: 0
+	st_info: STT_NOTYPE STB_LOCAL
+	st_shndx: 0
+
+entry: 1
+	st_name: $d.0
+	st_value: 0
+	st_size: 0
+	st_info: STT_NOTYPE STB_LOCAL
+	st_shndx: 3
+
+entry: 2
+	st_name: $d.1
+	st_value: 0
+	st_size: 0
+	st_info: STT_NOTYPE STB_LOCAL
+	st_shndx: 4
+
+entry: 3
+	st_name: entry1
+	st_value: 0
+	st_size: 0
+	st_info: STT_NOTYPE STB_LOCAL
+	st_shndx: 5
+
+entry: 4
+	st_name: $d.2
+	st_value: 0
+	st_size: 0
+	st_info: STT_NOTYPE STB_LOCAL
+	st_shndx: 5
+
+entry: 5
+	st_name: entry2
+	st_value: 0x1c
+	st_size: 0
+	st_info: STT_NOTYPE STB_LOCAL
+	st_shndx: 5
+
+entry: 6
+	st_name: $x.3
+	st_value: 0
+	st_size: 0
+	st_info: STT_NOTYPE STB_LOCAL
+	st_shndx: 2
+
+entry: 7
+	st_name: main
+	st_value: 0
+	st_size: 8
+	st_info: STT_NOTYPE STB_GLOBAL
+	st_shndx: 2

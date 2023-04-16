@@ -4,6 +4,7 @@ all
         "Starting Test Suite"
 	^exec1
 	^exec2
+	^exec3
 	^dso1
 	^dso2
 	^archive1
@@ -19,6 +20,11 @@ exec2
 	"Starting exec2 Test"
 	/ts/exec2/tc
 	"Complete exec2 Test"
+
+exec3
+	"Starting exec3 Test"
+	/ts/exec3/tc
+	"Complete exec3 Test"
 
 dso1
 	"Starting dso1 Test"
